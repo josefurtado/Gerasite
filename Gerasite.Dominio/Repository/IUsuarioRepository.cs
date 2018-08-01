@@ -4,6 +4,6 @@ namespace Gerasite.Dominio.Interfaces
 {
     public interface IUsuarioRepository : IRepository<Usuario>
     {
-        Usuario GetByNome(string nome);
+        Usuario GetByNome(string nomeNovo);
     }
 }
