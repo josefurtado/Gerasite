@@ -18,6 +18,12 @@ namespace Gerasite.Infra.Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new TextoMap());
+            modelBuilder.Configurations.Add(new TemplateMap());
+            modelBuilder.Configurations.Add(new TemplateArquivadoMap());
+            modelBuilder.Configurations.Add(new PaginaMap());
+            modelBuilder.Configurations.Add(new MenuMap());
+            modelBuilder.Configurations.Add(new LogoMap());
         }
     }
 }
