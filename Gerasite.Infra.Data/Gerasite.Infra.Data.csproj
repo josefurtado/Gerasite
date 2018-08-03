@@ -60,6 +60,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\TextoRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Transaction\IUnityOfWork.cs" />
     <Compile Include="Transaction\UnityOfWork.cs" />

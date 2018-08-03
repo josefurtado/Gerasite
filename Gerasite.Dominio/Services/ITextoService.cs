@@ -2,7 +2,7 @@
 
 namespace Gerasite.Dominio.Services
 {
-    public interface IUsuarioService : IService<Usuario>
+    public interface ITextoService : IService<Texto>
     {
     }
 }
