@@ -23,7 +23,7 @@ namespace Gerasite.Infra.Data.Mappings
             Property(x => x.CorTemplate)
                 .HasMaxLength(12);
 
-            HasRequired(x => x.Sessao);
+            //HasRequired(x => x.Sessao);
         }
     }
 }
