@@ -1,6 +1,7 @@
 ﻿using Gerasite.Dominio.Entidades;
 using Gerasite.Infra.Data.Mappings;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Gerasite.Infra.Data.Context
 {
@@ -14,6 +15,12 @@ namespace Gerasite.Infra.Data.Context
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Texto> Textos { get; set; }
+        public DbSet<Template> Templates { get; set; }
+        public DbSet<TemplateArquivado> TemplatesArquivados { get; set; }
+        public DbSet<Pagina> Paginas { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<Logo> Logos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -24,6 +31,8 @@ namespace Gerasite.Infra.Data.Context
             modelBuilder.Configurations.Add(new PaginaMap());
             modelBuilder.Configurations.Add(new MenuMap());
             modelBuilder.Configurations.Add(new LogoMap());
+
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
     }
 }

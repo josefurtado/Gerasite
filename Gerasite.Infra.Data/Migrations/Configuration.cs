@@ -1,12 +1,15 @@
 namespace Gerasite.Infra.Data.Migrations
 {
+    using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Gerasite.Infra.Data.Context.GerasiteContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Gerasite.Infra.Data.Context.GerasiteContext context)
