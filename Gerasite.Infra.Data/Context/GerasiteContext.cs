@@ -12,6 +12,8 @@ namespace Gerasite.Infra.Data.Context
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
+
+            Database.CommandTimeout = 300;
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
@@ -32,6 +34,8 @@ namespace Gerasite.Infra.Data.Context
             modelBuilder.Configurations.Add(new MenuMap());
             modelBuilder.Configurations.Add(new LogoMap());
 
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
     }
