@@ -6,7 +6,7 @@ using System;
 
 namespace Gerasite.Infra.Data.Repository
 {
-    class TemplateArquivadoRepository : Repository<TemplateArquivado>, ITemplateArquivadoRepository
+    public class TemplateArquivadoRepository : Repository<TemplateArquivado>, ITemplateArquivadoRepository
     {
         public TemplateArquivadoRepository(GerasiteContext context)
             : base(context)

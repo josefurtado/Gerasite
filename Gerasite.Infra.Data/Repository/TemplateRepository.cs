@@ -6,7 +6,7 @@ using System;
 
 namespace Gerasite.Infra.Data.Repository
 {
-    class TemplateRepository : Repository<Template>, ITemplateRepository
+    public class TemplateRepository : Repository<Template>, ITemplateRepository
     {
         public TemplateRepository(GerasiteContext context)
             : base(context)
@@ -14,7 +14,8 @@ namespace Gerasite.Infra.Data.Repository
 
         }
 
-        public Template GetByNome(string nome)
+
+        Template ITemplateRepository.GetByNome(string nome)
         {
             throw new NotImplementedException();
         }
