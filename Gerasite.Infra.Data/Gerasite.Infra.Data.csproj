@@ -64,6 +64,8 @@
     <Compile Include="Repository\LogoRepository.cs" />
     <Compile Include="Repository\MenuRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\TemplateRepository.cs" />
+    <Compile Include="Repository\TemplateArquivadoRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Transaction\IUnityOfWork.cs" />
     <Compile Include="Transaction\UnityOfWork.cs" />
