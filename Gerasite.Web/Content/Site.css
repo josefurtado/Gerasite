@@ -16,3 +16,15 @@ textarea {
     max-width: 280px;
 }
 
+body {
+    background: url(../Images/background.jpg) no-repeat center center fixed;
+    background-position: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

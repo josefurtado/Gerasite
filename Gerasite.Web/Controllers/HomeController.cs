@@ -15,16 +15,6 @@ namespace Gerasite.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var user = new Usuario()
-            {
-                Id = 0,
-                Nome = "teste",
-                Email = "teste@teste.com",
-                Senha = "123",
-                HistoricoTemplate = false
-            };
-
-            _service.SaveOrUpdate(user);
             return View();
         }
     }

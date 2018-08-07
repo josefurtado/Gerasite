@@ -9,22 +9,35 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+    <section class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#movelmenu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#banner" id="item-header" class="navbar-brand">GeraSite</a>
         </div>
-    </div>
+        <div class="collapse navbar-collapse navbar-rigth" id="movelmenu">
+            <ul class="nav navbar-nav navbar-right" id="header">
+                <li>
+                    <a href="#">Funcionalidades</a>
+                </li>
+                <li>
+                    <a href="#">Sobre</a>
+                </li>
+                <li>
+                    <a href="#" class="teste">Login</a>
+                </li>
+                <li>
+                    <a href="#" >Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    </nav>
 
     <div class="container body-content">
         @RenderBody()
