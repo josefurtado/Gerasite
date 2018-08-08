@@ -1,5 +1,4 @@
-﻿using Gerasite.Dominio.Entidades;
-using Gerasite.Dominio.Services;
+﻿using Gerasite.Dominio.Services;
 using System.Web.Mvc;
 
 namespace Gerasite.Web.Controllers
