@@ -1,5 +1,4 @@
-﻿using Gerasite.Dominio.Entidades;
-using Gerasite.Dominio.Services;
+﻿using Gerasite.Dominio.Services;
 using System.Web.Mvc;
 
 namespace Gerasite.Web.Controllers
@@ -15,16 +14,6 @@ namespace Gerasite.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var user = new Usuario()
-            {
-                Id = 0,
-                Nome = "teste",
-                Email = "teste@teste.com",
-                Senha = "123",
-                HistoricoTemplate = false
-            };
-
-            _service.SaveOrUpdate(user);
             return View();
         }
     }
