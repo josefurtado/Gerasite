@@ -10,8 +10,34 @@ body, html {
 }
 
 .parallax1 {
-    background: url(../Images/city-blurred-hd.jpg);
+    background: url(../Images/night.jpg);
     min-height: 100%;
+}
+
+.parallax1 a {
+    margin-left: 80%;
+}
+
+.login {
+    float: right;
+    margin: 1%;
+    background: transparent;
+    height: 38px;
+    line-height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: inline-block;
+    float: none;
+    text-align: center;
+    width: 15%;
+    padding: 0px !important;
+    font-size: 20px;
+    color: #fff;
+}
+
+.login:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .parallax2 {
@@ -31,7 +57,7 @@ body, html {
 
 .parallax1, .parallax2, .parallax3, .parallax4 {
     position: relative;
-    opacity: .75;
+    opacity: .90;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
