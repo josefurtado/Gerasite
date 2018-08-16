@@ -15,7 +15,7 @@ namespace Gerasite.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(_service.Get());
         }
       
         public ActionResult CadastrarUsuario()
@@ -32,6 +32,34 @@ namespace Gerasite.Web.Controllers
                 {
                     _service.SaveOrUpdate(usuario);                   
                     return RedirectToAction("Index");
+                }
+                return View(usuario);
+            }
+            catch
+            {
+                return View(usuario);
+            }
+        }
+
+        public ActionResult EditarUsuario(int id)
+        {
+            Usuario usuario = _service.Get(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public ActionResult EditarUsuario(Usuario usuario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.SaveOrUpdate(usuario);
+                    return RedirectToAction("Index", "Usuario");
                 }
                 return View(usuario);
             }

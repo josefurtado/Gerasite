@@ -51,7 +51,8 @@ namespace Gerasite.Infra.Data.Repositorio
 
         public void Update(TEntity obj)
         {
-            throw new NotImplementedException();
+            Db.Entry(obj).State = EntityState.Modified;
+            SaveChanges();
         }
     }
 }

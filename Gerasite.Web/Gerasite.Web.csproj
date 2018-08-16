@@ -122,6 +122,7 @@
     <Content Include="Images\Hd-Laptop-wallpapers.jpg" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\night.jpg" />
+    <Content Include="Images\usuario-padrao.jpg" />
     <Content Include="Images\Work-Desk-HD-wallpaper.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -161,6 +162,7 @@
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Shared\_BasicLayout.cshtml" />
+    <Content Include="Views\Usuario\EditarUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
