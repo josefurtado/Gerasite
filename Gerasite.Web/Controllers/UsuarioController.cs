@@ -22,6 +22,14 @@ namespace Gerasite.Web.Controllers
         {
             return View();
         }
+        public ActionResult PainelUsuario()
+        {
+            Usuario usuario = new Usuario
+            {
+                Nome = "Everton",
+            };
+            return View(usuario);
+        }
 
         [HttpPost]
         public ActionResult CadastrarUsuario(Usuario usuario)

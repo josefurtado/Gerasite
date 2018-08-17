@@ -1,0 +1,62 @@
+﻿@model Gerasite.Dominio.Entidades.Usuario
+
+
+@{
+    /**/
+
+    ViewBag.Title = "PainelUsuario";
+    Layout = "~/Views/Shared/_BasicLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/dashboard.css" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="~/Scripts/dashboard.js" type="text/javascript"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-3 sidebar" id="sidebar">
+            <ul class="nav navbar-inverse nav-sidebar " id="itens">
+                <li id="img-item"> <img class="img-circle" src="~/Images/Usuario-padrao.jpg" /></li>
+                <li id="user"><h4>Olá, @Model.Nome</h4></a></li>
+                <li id="selection"><a href="#" id="item-sidebar">Painel</a></li>
+                <li id="selection"><a href="#" id="item-sidebar">Atualizar Cadastro</a></li>
+                <li id="selection"><a href="#" id="item-sidebar">Ver Templates</a></li>
+                <li id="selection"><a href="#" id="item-sidebar">Sair</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center">Templetes Feitos</h2>
+        </div>
+    </div>
+</div>
+<div class="container" id="Templates">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4 ">
+            <div class="zoom">
+                <img class="img-responsive" id="img-template" src="~/Images/background.jpg" />
+                <div class="edit" hidden>
+                    <botton type="button" class="btn btn-primary">Editar</botton>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xs-0 col-md-6 col-lg-4">
+            <div class="zoom1">
+                <img class="img-responsive" id="img-template" src="~/Images/background.jpg" />
+                <div class="edit1" hidden>
+                    <botton type="button" class="btn btn-primary">Editar</botton>
+                </div>
+            </div>
+        </div>
+        <div id="btn-new" class="sm-4 col-sm-0 col-xs-0 col-md-0"> 
+            <button id="button"type="button" class="btn btn-warning">Novo Template</button>
+        </div>
+    </div>
+</div>
+
+
+  
