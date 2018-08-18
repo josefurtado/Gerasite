@@ -1,0 +1,80 @@
+﻿@model Gerasite.Dominio.Entidades.Usuario
+
+@{
+     Layout = "~/Views/Shared/_BasicLayout.cshtml";
+     ViewBag.Title = "Editar Usuário";
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<link rel="stylesheet" src="~/Content/EditarUsuario.css" />
+
+<section class="container">
+    <div class="row form-horizontal">
+        <div class="col-md-12">
+            <h2>Configurações de Usuário</h2>
+        </div>
+
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="col-md-2 col-sm-2 hidden-xs">
+                <img class="img-responsive img-circle" src="~/Images/usuario-padrao.jpg" />
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <div class="form-group row ">
+                    @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label" })
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label" for="Foto">Foto</label>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-4">
+                        <input name="Foto" class="form-control-file" type="file">
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label" })
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    @Html.LabelFor(model => model.Senha, "Nova Senha", htmlAttributes: new { @class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label" })
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        @Html.PasswordFor(model => model.Senha, new { @class = "form-control", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label">Confirma Senha</label>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        <input type="password" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-4 col-sm-4 hidden-xs control-label"></label>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <input class="btn btn-success" type="submit" value="Salvar Alterações" />
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn	btn-danger" })
+                    </div>
+                </div>
+            </div>
+         }
+    </div>
+</section>
