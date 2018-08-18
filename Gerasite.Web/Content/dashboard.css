@@ -6,11 +6,11 @@
     margin-top: 15%;
 }
 
-#item-sidebar {
+.item-sidebar {
     color: #999 !important;
 }
 
-#selection :hover {
+.selection :hover {
     background-color: #d9600a;
     -webkit-transition: 0.5s ease-in;
     -moz-transition: 0.5s ease-in;
@@ -18,12 +18,12 @@
     transition: 0.5s ease-in;
 }
 
-#item-sidebar {
+.item-sidebar {
     position: relative;
     padding-left: 0;
 }
 
-    #item-sidebar:hover {
+    .item-sidebar:hover {
         padding-left: 40px;
     }
 

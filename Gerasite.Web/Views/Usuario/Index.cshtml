@@ -15,12 +15,12 @@
     <div class="row">
         <div class="col-sm-4 col-md-3 sidebar" id="sidebar">
             <ul class="nav navbar-inverse nav-sidebar " id="itens">
-                <li id="img-item"> <img class="img-circle" src="~/Images/usuario-padrao.jpg" /></li>
+                <li class="img-item"> <img class="img-circle" src="~/Images/usuario-padrao.jpg" /></li>
                 <li id="user"><h4>Olá, @Session["Nome"]</h4></a></li>
-                <li id="selection"><a href="#" id="item-sidebar">Painel</a></li>
-                <li id="selection">@Html.ActionLink("Editar", "EditarUsuario", new { id = Session["Id"] })</li>
-                <li id="selection"><a href="#" id="item-sidebar">Ver Templates</a></li>
-                <li id="selection"><a href="#" id="item-sidebar">Sair</a></li>
+                <li class="selection"><a href="#" class="item-sidebar">Painel</a></li>
+                <li class="selection"><a class="item-sidebar" @Html.ActionLink("Editar", "EditarUsuario", new { id = Session["Id"] })</li>
+                <li class="selection"><a href="#" class="item-sidebar">Ver Templates</a></li>
+                <li class="selection"><a href="#" class="item-sidebar">Sair</a></li>
             </ul>
         </div>
     </div>
