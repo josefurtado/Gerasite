@@ -112,6 +112,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\EditarUsuario.css" />
     <Content Include="Content\RegistrarUsuario.css" />
     <Content Include="Content\dashboard.css" />
     <Content Include="Content\Site.css" />
@@ -125,8 +127,12 @@
     <Content Include="Images\imagemtemplate2.jpg" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\night.jpg" />
+<<<<<<< HEAD
     <Content Include="Images\Usuario-padrao.jpg" />
     <Content Include="Images\usuario.png" />
+=======
+    <Content Include="Images\usuario-padrao.jpg" />
+>>>>>>> Branch_Katarina
     <Content Include="Images\Work-Desk-HD-wallpaper.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -167,7 +173,12 @@
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Shared\_BasicLayout.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Usuario\PainelUsuario.cshtml" />
+=======
+    <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\EditarUsuario.cshtml" />
+>>>>>>> Branch_Katarina
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
