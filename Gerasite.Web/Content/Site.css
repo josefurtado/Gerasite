@@ -120,11 +120,6 @@ section {
         text-align: center;
     }
 }
-
-ul.nav.navbar-nav.navbar-right {
-    margin-top: 5px;
-    font-size: 16px;
-}
 /*body {
     background: url(../Images/background.jpg) no-repeat center center fixed;
     background-position: cover;
