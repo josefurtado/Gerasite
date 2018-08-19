@@ -6,19 +6,11 @@
     margin-top: 15%;
 }
 
-<<<<<<< HEAD
 #item-sidebar {
     color: #999 !important;
 }
 
 #selection :hover {
-=======
-.item-sidebar {
-    color: #999 !important;
-}
-
-.selection :hover {
->>>>>>> Branch_Katarina
     background-color: #d9600a;
     -webkit-transition: 0.5s ease-in;
     -moz-transition: 0.5s ease-in;
@@ -26,20 +18,12 @@
     transition: 0.5s ease-in;
 }
 
-<<<<<<< HEAD
 #item-sidebar {
-=======
-.item-sidebar {
->>>>>>> Branch_Katarina
     position: relative;
     padding-left: 0;
 }
 
-<<<<<<< HEAD
     #item-sidebar:hover {
-=======
-    .item-sidebar:hover {
->>>>>>> Branch_Katarina
         padding-left: 40px;
     }
 
