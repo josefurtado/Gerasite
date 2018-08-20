@@ -1,18 +1,18 @@
 ﻿
 $(document).ready(function () {
     $(".zoom").hover(function () {
-        $(".edit").fadeIn(1000);
+        $(".edit").fadeIn(500);
     }, function () {
-        $(".edit").fadeOut(800);
+        $(".edit").fadeOut("fast");
     }
     );
 });
 
 $(document).ready(function () {
     $(".zoom1").hover(function () {
-        $(".edit1").fadeIn(1000);
+        $(".edit1").fadeIn(500);
     }, function () {
-        $(".edit1").fadeOut(800);
+        $(".edit1").fadeOut("fast");
     }
     );
 });

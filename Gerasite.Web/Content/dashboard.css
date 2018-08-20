@@ -2,15 +2,15 @@
     display: block;
 }
 
-#img-item {
-    margin-top: 15%;
+.img-item {
+    margin-top: 40px;
 }
 
-#item-sidebar {
+.item-sidebar {
     color: #999 !important;
 }
 
-#selection :hover {
+.selection :hover {
     background-color: #d9600a;
     -webkit-transition: 0.5s ease-in;
     -moz-transition: 0.5s ease-in;
@@ -18,12 +18,12 @@
     transition: 0.5s ease-in;
 }
 
-#item-sidebar {
+.item-sidebar {
     position: relative;
     padding-left: 0;
 }
 
-    #item-sidebar:hover {
+    .item-sidebar:hover {
         padding-left: 40px;
     }
 
@@ -44,16 +44,15 @@
     margin-top: 50px;
 }
 /*Sidebar responsive*/
-#sidebar{
-    height:100% !important;
-    
+#sidebar {
+    height: 100% !important;
 }
+
 @media only screen and (min-width: 1170px) {
     #sidebar {
         position: absolute;
         top: 64.9px;
         display: grid;
-       
         left: -3%;
     }
 
@@ -73,7 +72,6 @@
         position: absolute;
         top: 64.9px;
         display: grid;
-        
         left: -3%;
     }
 
@@ -95,7 +93,6 @@
         position: absolute;
         top: 62.9px;
         display: grid;
-        
         left: -3%;
     }
 
@@ -139,6 +136,7 @@
         margin-left: 25%;
     }
 }
+
 @media (min-width: 200px) and (max-width:766px) {
     #img-template {
         display: block;
@@ -147,9 +145,13 @@
     }
 }
 
-    .zoom, .zoom1 {
-        overflow: hidden;
-    }
+#img-template :hover{
+    filter: blur( 5px );
+}
+
+.zoom, .zoom1 {
+    overflow: hidden;
+}
 
     .zoom img, .zoom1 img {
         max-width: 100%;
@@ -162,6 +164,7 @@
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+        filter: brightness( 25% );
     }
 /*end Templates hover*/
 
@@ -176,4 +179,4 @@
     padding-bottom: 35px;
 }
 
-/*Img */
+
