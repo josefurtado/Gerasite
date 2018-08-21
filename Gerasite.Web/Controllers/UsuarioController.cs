@@ -26,7 +26,7 @@ namespace Gerasite.Web.Controllers
                 return RedirectToAction("Login");
             }
         }
-      
+
         public ActionResult CadastrarUsuario()
         {
             return View();
@@ -39,7 +39,7 @@ namespace Gerasite.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _service.SaveOrUpdate(usuario);                   
+                    _service.SaveOrUpdate(usuario);
                     return RedirectToAction("Index");
                 }
                 return View(usuario);
@@ -51,9 +51,9 @@ namespace Gerasite.Web.Controllers
         }
 
         public ActionResult EditarUsuario(int id)
-        {    
+        {
             Usuario usuario = _service.Get(id);
-            if(usuario == null)
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
@@ -87,7 +87,7 @@ namespace Gerasite.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Usuario user)
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 using (GerasiteContext varBanco = new GerasiteContext())
                 {
@@ -100,7 +100,7 @@ namespace Gerasite.Web.Controllers
                     }
                     if (usuario == null)
                     {
-                        Session["Message"] = "Dados Incorretos!";                    
+                        Session["Message"] = "Dados Incorretos!";
                     }
                 }
             }

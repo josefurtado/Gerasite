@@ -1,15 +1,13 @@
 ﻿#sidebar {
     display: block;
 }
-
-#img-item {
-    margin-top: 15%;
+.img-item {
+    margin-top: 40px;
 }
 
 .item-sidebar {
     color: #999 !important;
 }
-
 .selection :hover {
     background-color: #d9600a;
     -webkit-transition: 0.5s ease-in;
@@ -22,11 +20,10 @@
     position: relative;
     padding-left: 0;
 }
-
-    .item-sidebar:hover {
-        padding-left: 40px;
-    }
-
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none !important    ;
+    background-color: #d9600a !important;
+}
 #user {
     border-bottom-style: solid;
     border-bottom-width: thin;
@@ -34,35 +31,26 @@
     border-bottom-color: #716e6e;
     color: #999;
 }
-
-.nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color: #d9600a;
-}
-
-#button {
-    margin-top: 50px;
-}
+    .item-sidebar:hover {
+        padding-left: 40px;
+    }
 /*Sidebar responsive*/
-#sidebar{
-    height:100% !important;
-    
+#sidebar {
+    height: 100% !important;
 }
+
 @media only screen and (min-width: 1170px) {
     #sidebar {
         position: absolute;
         top: 64.9px;
         display: grid;
-       
         left: -3%;
     }
-
     .nav > li > a {
         position: relative;
         display: block;
         padding: 28px 20px;
     }
-
     #img-item {
         margin-top: 15%;
     }
@@ -73,16 +61,8 @@
         position: absolute;
         top: 64.9px;
         display: grid;
-        
         left: -3%;
     }
-
-    #Templates {
-        position: absolute;
-        margin-top: 20px;
-        margin-left: 25%;
-    }
-
     .nav > li > a {
         position: relative;
         display: block;
@@ -95,23 +75,14 @@
         position: absolute;
         top: 62.9px;
         display: grid;
-        
         left: -3%;
     }
-
-    #Templates {
-        position: absolute;
-        margin-top: 20px;
-        margin-left: 30%;
-    }
-
     .nav > li > a {
         position: relative;
         display: block;
         padding: 28px 20px;
     }
 }
-
 @media (min-width: 200px) and (max-width:766px) {
     #sidebar {
         padding: 0;
@@ -121,59 +92,9 @@
     #img-item {
         margin-top: 1%;
     }
-
-    #Templates {
-        position: absolute;
-        margin-bottom: 10%;
+    #itens{
+        margin-left:-15px;
+        margin-right:-15px;
     }
 }
 /*end Sidebar*/
-
-/*Img Templates hover*/
-
-
-@media only screen and (min-width: 1170px) {
-    #Templates {
-        position: absolute;
-        margin-top: 20px;
-        margin-left: 25%;
-    }
-}
-@media (min-width: 200px) and (max-width:766px) {
-    #img-template {
-        display: block;
-        margin: 15px auto;
-        width: 75%;
-    }
-}
-
-    .zoom, .zoom1 {
-        overflow: hidden;
-    }
-
-    .zoom img, .zoom1 img {
-        max-width: 100%;
-        -moz-transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-    }
-
-    .zoom:hover img, .zoom1:hover img {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-/*end Templates hover*/
-
-/*btn edit*/
-.edit, .edit1 {
-    position: absolute;
-    left: 5%;
-    right: 5%;
-    bottom: 20px;
-    z-index: 10;
-    padding-top: 35px;
-    padding-bottom: 35px;
-}
-
-/*Img */

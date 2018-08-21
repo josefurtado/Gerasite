@@ -115,6 +115,7 @@
     <Content Include="Content\dashboard.css" />
     <Content Include="Content\EditarUsuario.css" />
     <Content Include="Content\RegistrarUsuario.css" />
+    <Content Include="Content\index.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -124,7 +125,7 @@
     <Content Include="Images\Hd-Laptop-wallpapers.jpg" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\night.jpg" />
-    <Content Include="Images\usuario-padrao.jpg" />
+    <Content Include="Images\Usuario-padrao.jpg" />
     <Content Include="Images\Work-Desk-HD-wallpaper.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -167,6 +168,7 @@
     <Content Include="Views\Shared\_BasicLayout.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\EditarUsuario.cshtml" />
+    <Content Include="Views\Usuario\_PartialMenuLateral.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
