@@ -2,29 +2,19 @@
 
 
 @{
-        ViewBag.Title = "Index";
-        Layout = "~/Views/Shared/_BasicLayout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BasicLayout.cshtml";
 }
+<link rel="stylesheet" href="~/Content/index.css" />
 <link rel="stylesheet" href="~/Content/dashboard.css" />
-
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
 <script src="~/Scripts/dashboard.js" type="text/javascript"></script>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-4 col-md-3 sidebar" id="sidebar">
-            <ul class="nav navbar-inverse nav-sidebar " id="itens">
-                <li class="img-item"> <img class="img-circle" src="~/Images/usuario-padrao.jpg" /></li>
-                <li id="user"><h4>Olá, @Session["Nome"]</h4></a></li>
-                <li class="selection"><a href="#" class="item-sidebar">Painel</a></li>
-                <li class="selection"><a class="item-sidebar" href="@Url.Action("EditarUsuario", "Usuario", new { id = Session["Id"] })">Editar</a></li>
-                <li class="selection"><a href="#" class="item-sidebar">Ver Templates</a></li>
-                <li class="selection"><a href="#" class="item-sidebar">Sair</a></li>
-            </ul>
-        </div>
-    </div>
+    @{Html.RenderPartial("~/Views/Usuario/_PartialMenuLateral.cshtml");}
 </div>
+
 <div class="jumbotron">
     <div class="container">
         <div class="row">

@@ -1,0 +1,20 @@
+﻿
+@model Gerasite.Dominio.Entidades.Usuario
+
+    <link href="~/Content/dashboard.css" rel="stylesheet" type="text/css" />
+
+
+ 
+        <div class="row">
+            <div class="col-sm-4 col-md-3 sidebar" id="sidebar">
+                <ul class="nav navbar-inverse nav-sidebar " id="itens">
+                    <li class="img-item"> <img class="img-circle" src="~/Images/usuario-padrao.jpg" /></li>
+                    <li id="user"><h4>Olá, @Session["Nome"]</h4></li>
+                    <li class="selection"><a class="item-sidebar" href="@Url.Action("Index", "Usuario")"> Painel</a></li>
+                    <li class="selection"><a class="item-sidebar" href="@Url.Action("EditarUsuario", "Usuario", new { id = Session["Id"] })"> Editar</a></li>
+                    <li class="selection"><a href="#" class="item-sidebar">Ver Templates</a></li>
+                    <li class="selection"><a href="#" class="item-sidebar">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+ 
