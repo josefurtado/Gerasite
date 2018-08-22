@@ -1,13 +1,9 @@
 ﻿using Gerasite.Dominio.Entidades;
-using Gerasite.Dominio.Services;
+using Gerasite.Application.Services.Interfaces;
 using Gerasite.Infra.Data.Transaction;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gerasite.Negocio.Services
+namespace Gerasite.Application.Services
 {
     public class TemplateService : ITemplateService
     {
