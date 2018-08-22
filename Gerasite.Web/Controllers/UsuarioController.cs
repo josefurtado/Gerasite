@@ -1,6 +1,9 @@
 ﻿using Gerasite.Application.ViewModels;
 using Gerasite.Application.Services.Interfaces;
 using System.Web.Mvc;
+using Gerasite.Infra.Data.Context;
+using System.Linq;
+using Gerasite.Dominio.Entidades;
 
 namespace Gerasite.Web.Controllers
 {
@@ -50,7 +53,7 @@ namespace Gerasite.Web.Controllers
 
         public ActionResult EditarUsuario(int id)
         {
-            Usuario usuario = _service.Get(id);
+            UsuarioViewModel usuario = _service.Get(id);
             if (usuario == null)
             {
                 return HttpNotFound();
@@ -59,7 +62,7 @@ namespace Gerasite.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditarUsuario(Usuario usuario)
+        public ActionResult EditarUsuario(UsuarioViewModel usuario)
         {
             try
             {
