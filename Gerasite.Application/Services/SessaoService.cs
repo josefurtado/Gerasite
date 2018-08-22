@@ -1,9 +1,9 @@
 ﻿using Gerasite.Dominio.Entidades;
-using Gerasite.Dominio.Services;
+using Gerasite.Application.Services.Interfaces;
 using Gerasite.Infra.Data.Transaction;
 using System.Collections.Generic;
 
-namespace Gerasite.Negocio.Services
+namespace Gerasite.Application.Services
 {
     public class SessaoService : ISessaoService
     {

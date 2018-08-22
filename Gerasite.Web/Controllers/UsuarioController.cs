@@ -1,7 +1,5 @@
-﻿using Gerasite.Dominio.Entidades;
-using Gerasite.Dominio.Services;
-using Gerasite.Infra.Data.Context;
-using System.Linq;
+﻿using Gerasite.Application.ViewModels;
+using Gerasite.Application.Services.Interfaces;
 using System.Web.Mvc;
 
 namespace Gerasite.Web.Controllers
@@ -33,7 +31,7 @@ namespace Gerasite.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario)
+        public ActionResult CadastrarUsuario(UsuarioViewModel usuario)
         {
             try
             {

@@ -182,6 +182,10 @@
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gerasite.Application\Gerasite.Application.csproj">
+      <Project>{fe02e0da-4c31-4f02-9d36-1c6fa28a4f4a}</Project>
+      <Name>Gerasite.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gerasite.Dominio\Gerasite.Dominio.csproj">
       <Project>{dedd773b-5b70-4a37-81d6-9981113ff959}</Project>
       <Name>Gerasite.Dominio</Name>
@@ -189,10 +193,6 @@
     <ProjectReference Include="..\Gerasite.Infra.Data\Gerasite.Infra.Data.csproj">
       <Project>{e328b666-c859-478c-8d3c-fa749ff58824}</Project>
       <Name>Gerasite.Infra.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gerasite.Negocio\Gerasite.Negocio.csproj">
-      <Project>{5a547bb1-52d0-43a7-8b61-7cb7e91c113b}</Project>
-      <Name>Gerasite.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

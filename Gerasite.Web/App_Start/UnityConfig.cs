@@ -1,10 +1,8 @@
+using Gerasite.Application.Services;
+using Gerasite.Application.Services.Interfaces;
 using Gerasite.Dominio.Entidades;
-using Gerasite.Dominio.Interfaces;
-using Gerasite.Dominio.Services;
 using Gerasite.Infra.Data.Context;
-using Gerasite.Infra.Data.Repositorio;
 using Gerasite.Infra.Data.Transaction;
-using Gerasite.Negocio.Services;
 using System;
 using System.Web.Mvc;
 using Unity;
@@ -51,6 +49,7 @@ namespace Gerasite.Web
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<GerasiteContext, GerasiteContext>();
+            container.RegisterType<Usuario, Usuario>();
             container.RegisterType<IUnityOfWork, UnityOfWork>();
             container.RegisterType<IUsuarioService, UsuarioService>();
 
