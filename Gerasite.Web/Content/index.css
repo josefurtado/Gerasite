@@ -1,0 +1,78 @@
+﻿#user {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    padding-bottom: 23px;
+    border-bottom-color: #716e6e;
+    color: #999;
+}
+#button {
+    margin-top: 50px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1169px) {
+    #Templates {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 25%;
+    } 
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {  
+    #Templates {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 30%;
+    }
+}
+
+@media (min-width: 200px) and (max-width:766px) {
+    #Templates {
+        position: absolute;
+        margin-bottom: 10%;
+    }
+}
+/*Img Templates hover*/
+@media only screen and (min-width: 1170px) {
+    #Templates {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 200px) and (max-width:766px) {
+    #img-template {
+        display: block;
+        margin: 15px auto;
+        width: 75%;
+    }
+}
+
+#img-template :hover{
+    filter: blur( 5px );
+}
+
+.zoom, .zoom1 {
+    overflow: hidden;
+}
+    .zoom img, .zoom1 img {
+        max-width: 100%;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .zoom:hover img, .zoom1:hover img {
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        filter: brightness( 25% );
+    }
+/*end Templates hover*/
+
+.edit, .edit1 {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 20px;
+    z-index: 10;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}

@@ -64,6 +64,7 @@
     <Compile Include="Repository\ITextoRepository.cs" />
     <Compile Include="Repository\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Services\ILogoService.cs" />
     <Compile Include="Services\IMenuService.cs" />
     <Compile Include="Services\IService.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Services\ITemplateService.cs" />
     <Compile Include="Services\ITextoService .cs" />
     <Compile Include="Services\IUsuarioService.cs" />
+=======
+>>>>>>> origin/master_copy2
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
