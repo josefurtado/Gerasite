@@ -57,7 +57,10 @@
     <Compile Include="Services\Interfaces\IUsuarioService.cs" />
     <Compile Include="Services\LogoService.cs" />
     <Compile Include="Services\MenuService.cs" />
+<<<<<<< HEAD:Gerasite.Application/Gerasite.Application.csproj
     <Compile Include="Services\TextoService.cs" />
+=======
+>>>>>>> Master_Copy:Gerasite.Negocio/Gerasite.Negocio.csproj
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="ViewModels\DomainToViewModelMappingProfile.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />

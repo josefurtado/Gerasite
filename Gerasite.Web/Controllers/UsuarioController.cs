@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 ﻿using Gerasite.Application.ViewModels;
 using Gerasite.Application.Services.Interfaces;
 using System.Web.Mvc;
 using Gerasite.Infra.Data.Context;
 using System.Linq;
 using Gerasite.Dominio.Entidades;
+=======
+﻿using Gerasite.Dominio.Entidades;
+using Gerasite.Dominio.Services;
+using System.Web.Mvc;
+>>>>>>> Master_Copy
 
 namespace Gerasite.Web.Controllers
 {
@@ -18,16 +24,9 @@ namespace Gerasite.Web.Controllers
 
         public ActionResult Index()
         {
-            if (Session["Id"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            return View();
         }
-
+      
         public ActionResult CadastrarUsuario()
         {
             return View();
@@ -40,7 +39,7 @@ namespace Gerasite.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _service.SaveOrUpdate(usuario);
+                    _service.SaveOrUpdate(usuario);                   
                     return RedirectToAction("Index");
                 }
                 return View(usuario);
@@ -50,6 +49,7 @@ namespace Gerasite.Web.Controllers
                 return View(usuario);
             }
         }
+<<<<<<< HEAD
 
         public ActionResult EditarUsuario(int id)
         {
@@ -107,5 +107,7 @@ namespace Gerasite.Web.Controllers
             }
             return View(user);
         }
+=======
+>>>>>>> Master_Copy
     }
 }
