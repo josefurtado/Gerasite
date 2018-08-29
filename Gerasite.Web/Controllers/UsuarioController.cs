@@ -40,8 +40,15 @@ namespace Gerasite.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _service.SaveOrUpdate(usuario);
-                    return RedirectToAction("Index");
+                    if (usuario.Senha == usuario.ConfirmaSenha)
+                    {
+                        _service.SaveOrUpdate(usuario);
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        Session["SenhaIncorreta"] = "Senhas não correspondem";                       
+                    }
                 }
                 return View(usuario);
             }
