@@ -21,8 +21,12 @@ namespace Gerasite.Application.ViewModels
         [Display(Name = "Senha")]
         public string Senha { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         public string ConfirmaSenha { get; set; }
 >>>>>>> parent of a04ab8b... Revert "Merge branch 'Branch_Katarina' into Branch_EvertonSantos"
+=======
+        
+>>>>>>> parent of c6df1ce... Revert "Merge branch 'Branch_Katarina' into Branch_EvertonSantos"
     }
 }
