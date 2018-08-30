@@ -1,10 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Gerasite.Application.ViewModels
+namespace Gerasite.Application.ViewModels.AccountViewModels
 {
-    public class UsuarioViewModel
+    public class RegisterViewModel
     {
-        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo Nome é requerido")]
@@ -20,9 +24,9 @@ namespace Gerasite.Application.ViewModels
         [Required(ErrorMessage = "O campo E-mail é requerido")]
         [Display(Name = "Senha")]
         public string Senha { get; set; }
-<<<<<<< HEAD
-=======
+
+        [Required(ErrorMessage = "O campo E-mail é requerido")]
+        [Display(Name = "ConfirmaSenha")]
         public string ConfirmaSenha { get; set; }
->>>>>>> parent of a04ab8b... Revert "Merge branch 'Branch_Katarina' into Branch_EvertonSantos"
     }
 }
