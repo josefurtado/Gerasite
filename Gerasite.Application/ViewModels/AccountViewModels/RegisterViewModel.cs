@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
 using System.ComponentModel.DataAnnotations;
-=======
->>>>>>> parent of c6df1ce... Revert "Merge branch 'Branch_Katarina' into Branch_EvertonSantos"
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +9,6 @@ namespace Gerasite.Application.ViewModels.AccountViewModels
 {
     public class RegisterViewModel
     {
-<<<<<<< HEAD
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo Nome é requerido")]
@@ -32,7 +28,5 @@ namespace Gerasite.Application.ViewModels.AccountViewModels
         [Required(ErrorMessage = "O campo E-mail é requerido")]
         [Display(Name = "ConfirmaSenha")]
         public string ConfirmaSenha { get; set; }
-=======
->>>>>>> parent of c6df1ce... Revert "Merge branch 'Branch_Katarina' into Branch_EvertonSantos"
     }
 }
