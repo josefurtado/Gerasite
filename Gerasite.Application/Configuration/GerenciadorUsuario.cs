@@ -17,6 +17,22 @@ namespace Gerasite.Application
         {
             GerasiteIdentityDbContext db = context.Get<GerasiteIdentityDbContext>();
             GerenciadorUsuario manager = new GerenciadorUsuario(new UserStore<UsuarioIdentity>(db));
+
+            manager.UserValidator = new UserValidator<UsuarioIdentity>(manager)
+            {
+                RequireUniqueEmail = true,
+                AllowOnlyAlphanumericUserNames = false,
+            };
+            
+            manager.PasswordValidator = new PasswordValidator
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false
+            };
+            
             return manager;
         }
 
