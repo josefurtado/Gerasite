@@ -13,8 +13,6 @@ namespace IdentitySample.Identity
     {
         public Task SendAsync(IdentityMessage message)
         {
-
-            //return ConfigSendGridasync(message);
             return SendMail(message);
         }
 
@@ -27,14 +25,15 @@ namespace IdentitySample.Identity
 
                 var msg = new MailMessage
                 {
-                    From = new MailAddress("Atlas.com.br", "Desenvolvedor(a) do Gerasite")
+                    From = new MailAddress("equipe.atlas.websites@gmail.com", "Equipe Atlas Websites")
                 };
                 msg.To.Add(new MailAddress(message.Destination));
                 msg.Subject = message.Subject;
                 msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
                 msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Html));
 
-                var smtpClient = new SmtpClient("smtp.provedor.com", Convert.ToInt32(587));
+                var smtpClient = new SmtpClient("smtp.gmail.com", Convert.ToInt32(587));
+                smtpClient.EnableSsl = true;
                 var credentials = new NetworkCredential(ConfigurationManager.AppSettings["ContaDeEmail"],
                 ConfigurationManager.AppSettings["SenhaEmail"]);
                 smtpClient.Credentials = credentials;
