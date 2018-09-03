@@ -71,8 +71,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +87,7 @@
     <Compile Include="Configuration\GerenciadorUsuario.cs" />
     <Compile Include="Context\GerasiteIdentityDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\UsuarioIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\ILogoService.cs" />

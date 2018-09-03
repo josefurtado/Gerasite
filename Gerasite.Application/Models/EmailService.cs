@@ -1,32 +1,23 @@
-﻿using Gerasite.Application;
-using Gerasite.Application.Context;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
-using Owin;
-using System;
+﻿using System;
 using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.AspNet.Identity;
 
-namespace Gerasite.Web.App_Start
+namespace IdentitySample.Identity
 {
-    public class IdentityConfig
+    public class EmailService : IIdentityMessageService
     {
-        public void Configuration(IAppBuilder app)
+        public Task SendAsync(IdentityMessage message)
         {
-            app.CreatePerOwinContext<GerasiteIdentityDbContext>(GerasiteIdentityDbContext.Create);
-            app.CreatePerOwinContext<GerenciadorUsuario>(GerenciadorUsuario.Create);
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Home/Index"),
-            });
+
+            //return ConfigSendGridasync(message);
+            return SendMail(message);
         }
-      
+
         // Implementação de e-mail manual
         private Task SendMail(IdentityMessage message)
         {
@@ -34,8 +25,10 @@ namespace Gerasite.Web.App_Start
             {
                 var text = HttpUtility.HtmlEncode(message.Body);
 
-                var msg = new MailMessage();
-                msg.From = new MailAddress("admin@Gerasite.com.br", "Admin do Gerasite");
+                var msg = new MailMessage
+                {
+                    From = new MailAddress("Atlas.com.br", "Desenvolvedor(a) do Gerasite")
+                };
                 msg.To.Add(new MailAddress(message.Destination));
                 msg.Subject = message.Subject;
                 msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
@@ -43,7 +36,7 @@ namespace Gerasite.Web.App_Start
 
                 var smtpClient = new SmtpClient("smtp.provedor.com", Convert.ToInt32(587));
                 var credentials = new NetworkCredential(ConfigurationManager.AppSettings["ContaDeEmail"],
-                    ConfigurationManager.AppSettings["SenhaEmail"]);
+                ConfigurationManager.AppSettings["SenhaEmail"]);
                 smtpClient.Credentials = credentials;
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(msg);
@@ -51,5 +44,6 @@ namespace Gerasite.Web.App_Start
 
             return Task.FromResult(0);
         }
+
     }
 }

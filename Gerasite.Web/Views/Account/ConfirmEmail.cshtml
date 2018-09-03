@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Confirmar E-mail";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ConfirmEmail</title>
+</head>
+<body>
+    <h2>@ViewBag.Title.</h2>
+    <div>
+        <p>
+            Obrigado por confirmar seu e-mail. Por favor @Html.ActionLink("Clique aqui para Login", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+    </div>
+</body>
+</html>

@@ -22,4 +22,4 @@ namespace Gerasite.Application.Context
     public class IdentityDbInit : DropCreateDatabaseIfModelChanges<GerasiteIdentityDbContext>
     {
     }
-}
+}
