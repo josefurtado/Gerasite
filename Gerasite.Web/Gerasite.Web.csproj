@@ -195,15 +195,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Shared\_BasicLayout.cshtml" />
-    <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\EditarUsuario.cshtml" />
     <Content Include="Views\Usuario\_PartialMenuLateral.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
