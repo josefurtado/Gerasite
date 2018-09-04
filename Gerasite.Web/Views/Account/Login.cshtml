@@ -6,18 +6,17 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<link rel="stylesheet" href="~/Content/RegistrarUsuario.css" />
+<link rel="stylesheet" href="~/Content/Register.css" />
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <div class="modal-dialog text-center">
-        <div class="col-sm-8 main-section">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="text-center">Entrar</h3>
+    <div class="container" id="PainelCadastro">
+            <div class="row" id="Cadastro">
+                <div class="form-horizontal" id="formulario">
+                    <h2 class="text-center">Cadastro</h2>
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md2" })
@@ -39,6 +38,5 @@
                 </div>
             </div>
         </div>
-    </div>
 }
 
