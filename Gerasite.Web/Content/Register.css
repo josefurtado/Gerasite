@@ -1,0 +1,70 @@
+﻿#PainelCadastro {
+    width: 450px;
+    height: auto;
+    background-color: #ffffff;
+    margin: 50px auto;
+}
+
+#Cadastro {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#formulario {
+    width: 75%;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1169px) {
+    .col-md-2 {
+        width: 20% !important;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1169px) {
+    #PainelCadastro {
+        margin: 20vh auto !important;
+    }
+}
+@media only screen and (min-width: 1170px) {
+    .col-md-2 {
+        width: 20% !important;
+    }
+}
+
+body {
+    background: url(../Images/IMG-6107-01.jpeg) no-repeat center center fixed;
+    background-position: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+   
+    align-items: center;
+    justify-content: center;
+}
+#button{
+    width:75%;
+    margin:0 50px;
+}
+@media only screen and (max-width: 600px){
+    body{
+        background: none;
+    }
+    #Cadastro {
+        width: 100%;
+        justify-content: flex-start;
+        padding:30px;
+    }
+    #button{
+        width: 70%;
+        margin: 0 40px;
+    }
+    #PainelCadastro {
+        width:auto;
+        min-width:315px;
+    }
+}

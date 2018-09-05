@@ -68,8 +68,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +84,7 @@
     <Compile Include="Configuration\GerenciadorUsuario.cs" />
     <Compile Include="Context\GerasiteIdentityDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\UsuarioIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\ILogoService.cs" />
@@ -99,13 +102,11 @@
     <Compile Include="Services\TemplateArquivadoService.cs" />
     <Compile Include="Services\TemplateService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
-    <Compile Include="ViewModels\AccountViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\AccountViewModels\ResetPasswordViewModel.cs" />
-    <Compile Include="ViewModels\AccountViewModels\SendCodeViewModel.cs" />
-    <Compile Include="ViewModels\AccountViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="ViewModels\ManagerViewModels\EditPasswordViewModel.cs" />
+    <Compile Include="ViewModels\ManagerViewModels\EditUserViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
     <Compile Include="ViewModels\ViewModelToDomainMappingProfile.cs" />
   </ItemGroup>
