@@ -105,12 +105,8 @@
     <Compile Include="Services\TemplateArquivadoService.cs" />
     <Compile Include="Services\TemplateService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
-    <Compile Include="ViewModels\AccountViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\AccountViewModels\ResetPasswordViewModel.cs" />
-    <Compile Include="ViewModels\AccountViewModels\SendCodeViewModel.cs" />
-    <Compile Include="ViewModels\AccountViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\DomainToViewModelMappingProfile.cs" />
     <Compile Include="ViewModels\ManagerViewModels\EditPasswordViewModel.cs" />
     <Compile Include="ViewModels\ManagerViewModels\EditUserViewModel.cs" />
