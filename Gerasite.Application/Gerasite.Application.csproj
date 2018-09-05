@@ -112,6 +112,8 @@
     <Compile Include="ViewModels\AccountViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="ViewModels\ManagerViewModels\EditPasswordViewModel.cs" />
+    <Compile Include="ViewModels\ManagerViewModels\EditUserViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
     <Compile Include="ViewModels\ViewModelToDomainMappingProfile.cs" />
   </ItemGroup>
