@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Gerasite.Web.Controllers
 {
+    [Authorize]
     public class ManagerController : Controller
     {
         #region Helpers
@@ -32,6 +33,7 @@ namespace Gerasite.Web.Controllers
         }
         #endregion
 
+        [Authorize]
         public ActionResult EditUser(string id)
         {
             if (id == null)
@@ -50,6 +52,7 @@ namespace Gerasite.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult EditUser(EditUserViewModel editUser)
         {
             if (ModelState.IsValid)
@@ -60,6 +63,7 @@ namespace Gerasite.Web.Controllers
                 IdentityResult result = GerenciadorUsuario.Update(usuario);
                 if (result.Succeeded)
                 {
+                    TempData["Message"] = "Informações desta conta foram editadas, realize login novamente e sincronize com nossa base de dados.";
                     return RedirectToAction("Index", "Usuario");
                 }
                 else
@@ -70,6 +74,7 @@ namespace Gerasite.Web.Controllers
             return View(editUser);
         }
 
+        [Authorize]
         public ActionResult EditPassword(string id)
         {
             if (id == null)
@@ -86,6 +91,7 @@ namespace Gerasite.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult EditPassword(EditPasswordViewModel editPassword)
         {
             if (ModelState.IsValid)
@@ -98,6 +104,7 @@ namespace Gerasite.Web.Controllers
                     IdentityResult result = GerenciadorUsuario.Update(usuario);
                     if (result.Succeeded)
                     {
+                        TempData["Message"] = "Informações desta conta foram editadas, realize login novamente e sincronize com nossa base de dados.";
                         return RedirectToAction("Index", "Usuario");
                     }
                     else
