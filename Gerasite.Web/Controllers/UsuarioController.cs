@@ -23,33 +23,6 @@ namespace Gerasite.Web.Controllers
         }
 
 
-        public ActionResult EditarUsuario(int id)
-        {
-            UsuarioViewModel usuario = _service.Get(id);
-            if (usuario == null)
-            {
-                return HttpNotFound();
-            }
-            return View(usuario);
-        }
-
-        [HttpPost]
-        public ActionResult EditarUsuario(UsuarioViewModel usuario)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    _service.SaveOrUpdate(usuario);
-                    return RedirectToAction("Index", "Usuario");
-                }
-                return View(usuario);
-            }
-            catch
-            {
-                return View(usuario);
-            }
-        }
         
     }
 }

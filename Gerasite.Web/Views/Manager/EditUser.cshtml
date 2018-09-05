@@ -17,7 +17,7 @@
 <script src="~/Scripts/dashboard.js" type="text/javascript"></script>
 
 <div class="container">
-    @{Html.RenderPartial("~/Views/Usuario/_PartialMenuLateral.cshtml");}
+    @{Html.RenderPartial("~/Views/Shared/_PartialMenuLateral.cshtml");}
 </div>
 
 <section class="container">
@@ -63,14 +63,15 @@
                 <div class="form-group row ">
                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label"> Alterar Senha</label>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <a href="@Url.Action("EditPassword", "Manage", new { id = User.Identity.GetUserId() })"> Editar Senha</a>
+                        <a href="@Url.Action("EditPassword", "Manager", new { id = User.Identity.GetUserId() })"> Editar Senha</a>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-lg-4 col-md-4 col-sm-4 hidden-xs control-label"></label>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <input class="btn btn-success" type="submit" value="Salvar Alterações" />
-                        @Html.ActionLink("Cancelar", "Index", "Usuario", new { @class = "btn	btn-danger" })
+                        <input type="button" value="Cancelar" class = "btn btn-danger" onclick="location.href='@Url.Action("Index", "Usuario")'" />
                     </div>
                 </div>
 

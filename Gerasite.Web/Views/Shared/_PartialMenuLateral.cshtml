@@ -7,7 +7,7 @@
             <li class="img-item"> <img class="img-circle" src="~/Images/usuario-padrao.jpg" /></li>
             <li id="user"><h4>@Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "null", "null", routeValues: null, htmlAttributes: new { title = "null" })</h4></li>
             <li class="selection"><a class="item-sidebar" href="@Url.Action("Index", "Usuario")"> Painel</a></li>
-            <li class="selection"><a class="item-sidebar" href="@Url.Action("EditUser", "Manage", new { id = User.Identity.GetUserId() })"> Editar</a></li>
+            <li class="selection"><a class="item-sidebar" href="@Url.Action("EditUser", "Manager", new { id = User.Identity.GetUserId() })"> Editar</a></li>
             <li class="selection"><a href="#" class="item-sidebar">Ver Templates</a></li>
             <li class="selection"><a class="item-sidebar" href="@Url.Action("Logout", "Account")"> Sair</a></li>
         </ul>
