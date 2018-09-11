@@ -52,7 +52,10 @@ namespace Gerasite.Web
             container.RegisterType<Usuario, Usuario>();
             container.RegisterType<IUnityOfWork, UnityOfWork>();
             container.RegisterType<IUsuarioService, UsuarioService>();
-
+            container.RegisterType<Template, Template>();
+            container.RegisterType<ITemplateService, TemplateService>();
+            container.RegisterType<TemplateArquivado, TemplateArquivado>();
+            container.RegisterType<ITemplateArquivadoService, TemplateArquivadoService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

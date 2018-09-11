@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Gerasite.Dominio.Entidades.Template>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListaTemplates</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeTemplate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoTemplate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorTemplate)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeTemplate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoTemplate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorTemplate)
+            </td>
+            <td>
+                @Html.ActionLink("Editar Template", "EditarTemplate", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
