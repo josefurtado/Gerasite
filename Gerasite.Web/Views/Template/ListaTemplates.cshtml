@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Gerasite.Dominio.Entidades.Template>
-
+@using Microsoft.AspNet.Identity;
 @{
     Layout = null;
 }
@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ListaTemplates</title>
+    <title>Lista de Templates</title>
 </head>
 <body>
     <table class="table">
@@ -23,10 +23,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.CorTemplate)
             </th>
+            <th>
+                Imagem
+            </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
+
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NomeTemplate)
@@ -38,11 +42,17 @@
                 @Html.DisplayFor(modelItem => item.CorTemplate)
             </td>
             <td>
-                @Html.ActionLink("Editar Template", "EditarTemplate", new { id=item.Id })
+                @if (!string.IsNullOrEmpty(item.FOTO_ENDERECO))
+                {
+                    <img src="@Url.Content(item.FOTO_ENDERECO)" alt="Image" style="width:100px; height:100px; max-width:100%; height:auto;" />
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Editar Template", "EditarTemplate", new { id = item.Id, idUser = User.Identity.GetUserId() })
             </td>
         </tr>
-    }
-    
+        }
+
     </table>
 </body>
 </html>

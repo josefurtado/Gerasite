@@ -111,7 +111,6 @@
     <Compile Include="ViewModels\ManagerViewModels\EditPasswordViewModel.cs" />
     <Compile Include="ViewModels\ManagerViewModels\EditUserViewModel.cs" />
     <Compile Include="ViewModels\TemplateViewModels\PortfolioViewModel.cs" />
-    <Compile Include="ViewModels\TemplateViewModels\TemplateEditavel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
     <Compile Include="ViewModels\ViewModelToDomainMappingProfile.cs" />
   </ItemGroup>
