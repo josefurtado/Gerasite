@@ -123,5 +123,74 @@ namespace Gerasite.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [AllowAnonymous]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await GerenciadorUsuario.FindByEmailAsync(model.Email);
+                if (user == null || !(await GerenciadorUsuario.IsEmailConfirmedAsync(user.Id)))
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+                else
+                {
+                    var code = await GerenciadorUsuario.GeneratePasswordResetTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await GerenciadorUsuario.SendEmailAsync(user.Id, "Esqueci a senha", "Por favor altere sua senha clicando aqui: " + callbackUrl);
+                    return View("ForgotPasswordConfirmation");
+                }
+            }
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        public ActionResult ForgotPasswordConfirmation()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ResetPassword(string code)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await GerenciadorUsuario.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return View();
+            }
+            var result = await GerenciadorUsuario.ResetPasswordAsync(user.Id, model.Code, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ResetPasswordConfirmation", "Account");
+            }
+            AddErrorsFromResult(result);
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
     }
 }

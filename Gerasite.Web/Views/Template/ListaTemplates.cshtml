@@ -1,58 +1,54 @@
 ﻿@model IEnumerable<Gerasite.Dominio.Entidades.Template>
-@using Microsoft.AspNet.Identity;
 @{
-    Layout = null;
+    ViewBag.Title = "Lista de Templates";
+    Layout = "~/Views/Shared/_NavGerasite.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Lista de Templates</title>
-</head>
-<body>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeTemplate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoTemplate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CorTemplate)
-            </th>
-            <th>
-                Imagem
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeTemplate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoTemplate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CorTemplate)
-            </td>
-            <td>
+<link rel="stylesheet" href="~/Content/index.css" />
+<link rel="stylesheet" href="~/Content/menu.css" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/dashboard.js"></script>
+<div class="container-fluid">
+    @{Html.RenderPartial("~/Views/Shared/_PartialMenuLateral.cshtml");}
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12"><br /><br /><br /></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Nossos Templates</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="Templates">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4 ">
+            <div class="zoom">
+                <div class="alert-danger alert" role="alert"><h4>@Html.DisplayFor(modelItem => item.NomeTemplate)</h4></div>
                 @if (!string.IsNullOrEmpty(item.FOTO_ENDERECO))
                 {
-                    <img src="@Url.Content(item.FOTO_ENDERECO)" alt="Image" style="width:100px; height:100px; max-width:100%; height:auto;" />
+                    <img class="img-responsive" id="img-template" src="@Url.Content(item.FOTO_ENDERECO)" alt="Image" />
                 }
-            </td>
-            <td>
-                @Html.ActionLink("Editar Template", "EditarTemplate", new { id = item.Id, idUser = User.Identity.GetUserId() })
-            </td>
-        </tr>
-        }
+                <br />
+                <div class="text-left">
+                    <strong> @Html.DisplayFor(modelItem => item.DescricaoTemplate)</strong>
+                </div>
+                <div class="edit" hidden>
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("EditarTemplate", "Template", new { id = item.Id})'">Editar</button>
+                </div>
+            </div>
 
-    </table>
-</body>
-</html>
+
+        </div>
+
+    }
+    
+</div>
+
+

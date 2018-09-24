@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gerasite.Dominio.Entidades
 {
@@ -11,5 +12,8 @@ namespace Gerasite.Dominio.Entidades
         //public Usuario Usuario { get; set; }
         public string IdUsuario { get; set; }
         public int IdTemplate { get; set; }
+        public int IdTipoTemplate { get; set; }
+        [DataType(DataType.ImageUrl)]
+        public string Imagem { get; set; }
     }
 }

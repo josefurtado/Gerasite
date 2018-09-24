@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Gerasite.Dominio.Entidades.TemplateArquivado>
+
+
+@{
+    ViewBag.Title = "Index Templates";
+    Layout = "~/Views/Shared/_BasicLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/index.css" />
+<link rel="stylesheet" href="~/Content/dashboard.css" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/dashboard.js" type="text/javascript"></script>
+
+<div class="container">
+    @{Html.RenderPartial("~/Views/Shared/_PartialMenuLateral.cshtml");}
+</div>
+@if (@TempData["Message"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["Message"]
+    </div>
+}
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center">Templetes Feitos</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="Templates">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4 thumbnail">
+            <div class="zoom">
+                @Html.DisplayFor(modelItem => item.IdTemplate)
+
+                <div class="edit" hidden>
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("VerDetalhe", "Template", new { id = item.Id})'">Editar</button>
+                </div>
+            </div>
+        </div>
+    }
+    <div id="btn-new" class="sm-4 col-sm-0 col-xs-0 col-md-0">
+        <button id="button" type="button" class="btn btn-warning" onclick="location.href='@Url.Action("ListaTemplates", "Template")'">Novo Template</button>
+    </div>
+</div>

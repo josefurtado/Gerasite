@@ -1,6 +1,9 @@
 using Gerasite.Application.Services;
 using Gerasite.Application.Services.Interfaces;
+using Gerasite.Application.Services.Interfaces.ITemplatesService;
+using Gerasite.Application.Services.TemplatesService;
 using Gerasite.Dominio.Entidades;
+using Gerasite.Dominio.Entidades.Templates;
 using Gerasite.Infra.Data.Context;
 using Gerasite.Infra.Data.Transaction;
 using System;
@@ -56,6 +59,12 @@ namespace Gerasite.Web
             container.RegisterType<ITemplateService, TemplateService>();
             container.RegisterType<TemplateArquivado, TemplateArquivado>();
             container.RegisterType<ITemplateArquivadoService, TemplateArquivadoService>();
+            container.RegisterType<Portfolio, Portfolio>();
+            container.RegisterType<IPortfolioService, PortfolioService>();
+            container.RegisterType<Comercial, Comercial>();
+            container.RegisterType<IComercialService, ComercialService>();
+            container.RegisterType<Mostruario, Mostruario>();
+            container.RegisterType<IMostruarioService, MostruarioService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

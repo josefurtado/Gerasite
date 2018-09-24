@@ -1,0 +1,205 @@
+﻿@model Gerasite.Dominio.Entidades.Templates.Comercial
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Meu Template</title>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/Templates/Comercial/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Templates/Comercial/layoutGeraSite.css" />
+    <link rel="stylesheet" href="~/Content/Templates/Comercial/layoutCafeteria.css">
+    <link rel="stylesheet" href="~/Content/Templates/Comercial/layoutCafeteriaPreto.css">
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top corNav" id="#menuLayout">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar corIconBar"></span>
+                    <span class="icon-bar corIconBar"></span>
+                    <span class="icon-bar corIconBar"></span>
+                </button>
+            </div>
+
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav ">
+                    <li><a href="#sHome"><strong>HOME</strong></a></li>
+                    <li><a href="#sSobre"><strong>SOBRE</strong></a></li>
+                    <li><a href="#sMenu"><strong>CARDÁPIO</strong></a></li>
+                    <li><a href="#sContatos"><strong>CONTATOS</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SESSAO PRINCIPAL -->
+    <header id="sHome" class="container">
+        <img class="imgContainer" id="img-template" src="@Url.Content(Model.CapaImg1)" alt="Image" />
+        <span class="center corBanner">@Html.DisplayFor(model => model.Titulo)</span>
+    </header>
+
+    <!-- SESSAO SOBRE -->
+    <section id="sSobre" class="container-fluid">
+        <br><br><br>
+        <div class="row">
+            <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+            <div class="col-sm-4 col-xs-8 col-lg-4 col-3 text-center fonteTituloSessao corFonteTituloSessao h1">SOBRE NÓS</div>
+            <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-sm-2 col-lg-3"></div>
+            <div id="textoSobre" class="col-sm-8 col-lg-6  jumbotron fonteTextoSessao corFonteTextoSessao h4">
+                @Html.DisplayFor(model => model.TextoSobre)
+            </div>
+            <div class="col-sm-2 col-lg-3"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2 col-lg-3"></div>
+            <div id="textoCitacao" class="col-sm-8 col-lg-6 jumbotron h4">@Html.DisplayFor(model => model.TextoCitacao)</div>
+            <div class="col-sm-2 col-lg-3"></div>
+        </div>
+    </section>
+
+    <!-- IMAGEM SESSAO SOBRE -->
+    <section class="container-fluid">
+        <br>
+        <div class="row ">
+            <div class="col-sm-2 col-lg-3"></div>
+            <div class="col-sm-8 col-lg-6">
+                <img class="img-responsive" src="@Url.Content(Model.Img2)" alt="Image" />                
+            </div>
+            <div class="col-sm-2 col-lg-3"></div>
+        </div>
+    </section>
+    <br>
+
+    <!-- FUNCIONAMENTO -->
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 col-lg-3"></div>
+            <div id="funcionamento" class="col-sm-8 col-lg-6 h4">
+                @Html.DisplayFor(model => model.TextoFuncionamento)
+            </div>
+            <div class="col-sm-2 col-lg-3"></div>
+        </div>
+    </section>
+
+    <!-- SESSAO CARDAPIO -->
+    <section id="sMenu" class="container-fluid">
+        <br><br><br>
+        <div class="row">
+            <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+            <div class="col-sm-4 col-xs-8 col-lg-4 col-3 text-center fonteTituloSessao corFonteTituloSessao h1">CARDÁPIO</div>
+            <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+        </div>
+
+        <div id="textoMenu" class="jumbotron fundoBranco">
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>@Html.DisplayFor(model => model.TituloPrato1)</b><br>
+                    @Html.DisplayFor(model => model.TextoPrato1)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>@Html.DisplayFor(model => model.TituloPrato2)</b><br>
+                    @Html.DisplayFor(model => model.TextoPrato2)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>@Html.DisplayFor(model => model.TituloPrato3)</b><br>
+                    @Html.DisplayFor(model => model.TextoPrato3)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>@Html.DisplayFor(model => model.TituloPrato4)</b><br>
+                    @Html.DisplayFor(model => model.TextoPrato4)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SESSAO IMAGEM CARDÁPIO -->
+    <section class="container-fluid">
+        <div class="row ">
+            <div class="col-sm-2 col-lg-3"></div>
+            <div class="col-sm-8 col-lg-6">
+                <img class="img-responsive" src="@Url.Content(Model.Img3)" alt="Image" />
+            </div>
+            <div class="col-sm-2 col-lg-3"></div>
+        </div>
+    </section>
+
+    <!-- SESSAO CONTATOS -->
+    <section id="sContatos" class="container-fluid">
+        <br><br><br>
+        <div class="row">
+            <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+            <div class="col-sm-4 col-xs-8 col-lg-4 col-3 text-center fonteTituloSessao corFonteTituloSessao h1">CONTATOS</div>
+            <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+        </div>
+
+        <div id="textoOnde" class="jumbotron fundoBranco">
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>Telefone:</b><br><br>
+                    @Html.DisplayFor(model => model.Telefone)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>E-mail:</b><br><br>
+                    @Html.DisplayFor(model => model.Email)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6 fonteTextoSessao corFonteTextoSessao h4">
+                    <b>Endereço:</b><br><br>
+                    @Html.DisplayFor(model => model.Endereco)
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER LAYOUT -->
+    <footer class="container-fluid footer footerLayout h4">
+        <br>
+        <center> GeraSite - Todos os direitos reservados</center>
+        <br>
+    </footer>
+
+</body>
+</html>

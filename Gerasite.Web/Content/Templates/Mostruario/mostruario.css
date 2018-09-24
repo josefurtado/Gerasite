@@ -1,0 +1,128 @@
+.container{
+    width: 100%;
+}
+.cont{
+    padding-bottom: 7%;
+}
+.cont2{
+    padding-bottom: 2%;
+}
+.preenchimento{
+    padding-left: 0% !important;
+}
+.navFixa{
+    position: fixed;
+}
+.nav-sidebar{
+    height: 100vh;
+}
+.text-left{
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.item-sidebar {
+    color: white !important;
+}
+.tituloMenu{
+    position: relative;;
+    padding-top: 30%;
+    font-size: 30px !important;
+}
+.itemMenuInicio{
+    position: relative;
+    margin-top: 30%;
+    font-size: 25px;
+}
+.itemMenu{
+    font-size: 25px;
+}
+.itemMenu2{
+    font-size: 20px;
+}
+.nav li a:hover {
+    color: #000000 !important;
+    background-color: #fff !important;
+    text-align: center;
+}
+.titulo{
+    font-size: 70px;
+}
+.tituloSessao{
+    font-size: 55px;
+}
+
+
+.corTexto{
+    color: black;
+}
+.textoSessao{
+    font-size: 18px;
+}
+.fundoInput{
+    background-color: rgba(148, 147, 147, 0.1);
+}
+.subtitulo{
+    color:white !important;
+    font-size: 30px;
+}
+.jumbotron{
+    background: rgb(197, 188, 188);
+    margin-bottom:0% !important;
+    border-radius: 0px !important;
+    padding: 5px;
+    text-align: right;
+    color: rgb(80, 77, 77);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {       
+    
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .titulo{
+        font-size: 70px;
+    }
+    .tituloSessao{
+        font-size: 55px;
+    }
+    .textoSessao{
+        font-size: 18px;
+    }
+}
+    
+@media (min-width: 576px) and (max-width: 767.98px) {    
+    .titulo{
+        font-size: 65px;
+    }
+    .tituloSessao{
+        font-size: 55px;
+    }
+    .textoSessao{
+        font-size: 18px;
+    }
+
+}
+@media (max-width: 575.98px) {  
+    .titulo{
+        font-size: 55px;
+    }
+    .tituloSessao{
+        font-size: 45px;
+    }
+    .textoSessao{
+        font-size: 17px;
+    }
+      
+}
+@media only screen and (max-width:367.98px) {
+    .titulo{
+        font-size: 40px;
+    }    
+    .tituloSessao{
+        font-size: 35px;
+        
+    }
+    .textoSessao{
+        font-size: 15px;
+    }
+}

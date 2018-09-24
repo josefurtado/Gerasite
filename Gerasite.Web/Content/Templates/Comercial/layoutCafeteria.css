@@ -1,0 +1,267 @@
+    #btnPreto{
+        background-color:black;
+    }
+    #btnRosa{
+        background-color:#f4426b;
+    }
+    #btnAzul{
+        background-color:#0753b6;
+    }
+    #btnVermelho{
+        background-color: #7c0808;
+    }
+    nav ul.menuUl {
+        display: flex;
+        width: 100%;
+        text-align: center;
+    }
+    li.menuLi {
+        flex-grow: 2;
+    }
+    .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+    .imgContainer{        
+        background-position: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size:cover;
+        background-size:cover;
+        width: 100%;
+        height: 40em;
+        display:flex;
+        margin: 0% !important;
+    }
+   .fonteTituloSessao{       
+        text-align: center;
+        font-family:'Courier New';
+   }
+   .fonteTextoSessao{        
+        text-align: left; 
+        font-family:Courier New;
+    }
+    #textoCitacao, #funcionamento{
+        color:black;
+        text-align: left; 
+        font-family:Courier New;
+    }
+    .footer{        
+        position: relative; 
+        bottom: 0%;
+    }
+   .corIconBar{
+       background-color: white;
+    }
+   .container{
+       position: relative;
+       width: 100%;
+       height: 50%;
+       padding: 0% !important;
+    }
+   .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 9rem;        
+        font-family: Georgia;
+        text-align: center;
+    }
+    #textoSobre.jumbotron{
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 0%;
+    }
+    #textoCitacao{
+        padding-top: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 1%;
+        border-style: solid;
+        border-width: 0px 0px 0px 10px;       
+    }
+    #textoMenu.jumbotron{
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 1%;
+    }
+
+    .fundoInput{
+        background-color: rgba(148, 147, 147, 0.1);
+    }
+    .strong{
+        font-weight: bold;    
+    }
+    .inputEspaco{
+        margin-bottom: 0% !important;
+        width: 105%;
+    }
+    
+    .fundoBranco{
+        background-color: white;
+    }
+    @media (min-width: 1200px) { 
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 90px;                  
+        }
+        .h1{
+            display: block;
+            font-size: 35px;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 1.2%;
+            padding-bottom: 1.1%;
+        }
+        .h4 { 
+            display: block;
+            font-size: 17.5px;
+            margin-top: 0%;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+        .footerLayout{
+            padding: 1%;
+            margin-bottom:0%;
+        }
+      
+     }
+
+     @media (min-width: 992px) and (max-width: 1199.98px) {
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 90px;                  
+        }
+        .h1{
+            display: block;
+            font-size: 35px;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 1.2%;
+            padding-bottom: 1.1%;
+        }
+        .h4 { 
+            display: block;
+            font-size: 17.5px;
+            margin-top: 0%;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+        .footerLayout{
+            padding: 1%;
+            margin-bottom:0%;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) { 
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 90px;                  
+        }
+        .h1{
+            display: block;
+            font-size: 35px;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 1.2%;
+            padding-bottom: 1.1%;
+        }
+        .h4 { 
+            display: block;
+            font-size: 17.5px;
+            margin-top: 0%;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+        .footerLayout{
+            padding: 1%;
+            margin-bottom:0%;
+        }
+    }
+    
+    @media (min-width: 576px) and (max-width: 767.98px) { 
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 90px;                  
+        }
+        .h1{
+            display: block;
+            font-size: 35px;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 1.2%;
+            padding-bottom: 1.1%;
+        }
+        .h4 { 
+            display: block;
+            font-size: 17.5px;
+            margin-top: 0%;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+        .footerLayout{
+            padding: 1%;
+            margin-bottom:0%;
+        }
+    }
+    @media (max-width: 575.98px) {
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 60px;                  
+        }
+        .h1{
+            display: block;
+            font-size: 30px;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 1.2%;
+            padding-bottom: 1.1%;
+        }
+        .h4 { 
+            display: block;
+            font-size: 17.5px;
+            margin-top: 0%;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+        .footerLayout{
+            padding: 2.3%;
+            margin-bottom:0%;
+        }
+        nav ul {
+           font-size: 8.4px;
+        }
+       
+        
+       
+    }

@@ -1,0 +1,23 @@
+        #principal.jumbotron {
+            background-color: #f73842;
+            color: #fff;
+            padding-top: 15%;
+            padding-bottom:15%;   
+        }
+
+
+        .navbar-nav li a:hover {
+            color: #e82c35 !important;
+            background-color: #ffffff !important;
+        }
+
+        .corNav{
+            background-color: #e82c35;
+        }
+        .cor{
+            background-color: #f73842;
+        }
+	.fundoCitacao{
+            background-color: rgb(80, 76, 76);
+            color: #FFFFFF;
+        }

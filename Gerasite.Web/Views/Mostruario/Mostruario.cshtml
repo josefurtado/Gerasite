@@ -1,0 +1,227 @@
+﻿@model Gerasite.Dominio.Entidades.Templates.Mostruario
+
+@{
+    Layout = "~/Views/Shared/_NavGerasite.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<link href="~/Content/Templates/Mostruario/bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/Templates/Mostruario/layoutGeraSite.css">
+<link rel="stylesheet" href="~/Content/Templates/Mostruario/mostruario.css">
+<link rel="stylesheet" href="~/Content/Templates/Mostruario/mostruarioLaranja.css">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12"><br /><br /><br /></div>
+    </div>
+</div>
+@using (Html.BeginForm("Mostruario", "Mostruario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <nav class="navbar navbar-fixed-top navbar-default corNav hidden-lg hidden-sm hidden-md" id="#menuLayout">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar corIconBar"></span>
+                    <span class="icon-bar corIconBar"></span>
+                    <span class="icon-bar corIconBar"></span>
+                </button>
+                <span class="navbar-brand item-sidebar">
+                   Seu Titulo
+                </span>
+            </div>
+
+            <div id="menu" class="collapse navbar-collapse text-center">
+                <ul class="nav navbar-nav corNav ">
+                    <li><a href="#Home" class="item-sidebar itemMenu2">Home</a></li>
+                    <li><a href="#Gallery" class="item-sidebar itemMenu2">Sessao</a></li>
+                    <li><a href="#Life" class="item-sidebar itemMenu2">Sessao2</a></li>
+                    <li><a href="#Living" class="item-sidebar itemMenu2">Sessao3</a></li>
+                    <li><a href="#Reflection" class="item-sidebar itemMenu2">Sessao4</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 preenchimento navFixa hidden-xs">
+                <ul class="nav nav-sidebar corNav text-left">
+                    <li class="item-sidebar tituloMenu">
+                       Seu Titulo
+                    </li>
+                    <li><a href="#Home" class="item-sidebar itemMenuInicio">Home</a></li>
+                    <li><a href="#Gallery" class="item-sidebar itemMenu">Sessao</a></li>
+                    <li><a href="#Life" class="item-sidebar itemMenu">Sessao2</a></li>
+                    <li><a href="#Living" class="item-sidebar itemMenu">Sessao3</a></li>
+                    <li><a href="#Reflection" class="item-sidebar itemMenu">Sessao4</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container cont">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 "></div>
+            <div class="col-lg-9 col-md-9 col-sm-9"> </div>
+        </div>
+        <div class="row cont2 hidden-lg hidden-sm hidden-md">
+            <div class="col-xs-12"> <br></div>
+        </div>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <header id="Home" class="container cont2">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 "></div>
+            <div class="col-lg-9 col-md-9 col-sm-9 corNav2">
+                @Html.TextAreaFor(model => model.Titulo, new { @maxlength = "30", @class = "fundoInput titulo corTexto form-control", rows = "1", placeholder = "Seu Titulo", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </header>
+
+    <section id="Gallery" class="container cont2">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 "></div>
+            <div class="col-lg-9 col-md-9 col-sm-9  corNav2">
+                @Html.TextAreaFor(model => model.TituloSessao1, new { @maxlength = "30", @class = "fundoInput titulo corTitulo form-control", rows = "1", placeholder = "Sessao", @required = "required" })
+                @Html.ValidationMessageFor(model => model.TituloSessao1, "", new { @class = "text-danger" })
+
+                <div class="row  container-fluid">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <br><br></div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img class="img-responsive thumbnail" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg1, new { Type = "file", @required = "required" })
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img class="img-responsive thumbnail" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg2, new { Type = "file", @required = "required" })
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img class="img-responsive thumbnail" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg3, new { Type = "file", @required = "required" })
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img class="img-responsive thumbnail" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg4, new { Type = "file", @required = "required" })
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img class="img-responsive thumbnail" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg5, new { Type = "file", @required = "required" })
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img class="img-responsive thumbnail" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg6, new { Type = "file", @required = "required" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Life" class="container cont2">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-9 col-md-9 col-sm-9 corNav2">
+                @Html.TextAreaFor(model => model.TituloSessao2, new { @maxlength = "30", @class = "fundoInput titulo corTitulo form-control", rows = "1", placeholder = "Sessao2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.TituloSessao2, "", new { @class = "text-danger" })
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <br><br></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        @Html.TextAreaFor(model => model.TextoSessao2, new { @maxlength = "450", @class = "fundoInput  corTexto textoSessao form-control", rows = "10", placeholder = "Texto", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TextoSessao2, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Living" class="container cont2">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-9 col-md-9 col-sm-9 corNav2">
+                @Html.TextAreaFor(model => model.TituloSessao3, new { @maxlength = "30", @class = "fundoInput titulo corTitulo form-control", rows = "1", placeholder = "Sessao3", @required = "required" })
+                @Html.ValidationMessageFor(model => model.TituloSessao3, "", new { @class = "text-danger" })
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <br><br>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <span class="corTexto textoSessao">
+                            @Html.TextAreaFor(model => model.TextoSessao3, new { @maxlength = "450", @class = "fundoInput  corTexto textoSessao form-control", rows = "10", placeholder = "Texto", @required = "required" })
+                            @Html.ValidationMessageFor(model => model.TextoSessao3, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-9 col-md-9 col-sm-9 corNav2">
+                @Html.TextAreaFor(model => model.TituloSessao4, new { @maxlength = "30", @class = "fundoInput titulo corTitulo form-control", rows = "1", placeholder = "Sessao4", @required = "required" })
+                @Html.ValidationMessageFor(model => model.TituloSessao4, "", new { @class = "text-danger" })
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <br><br></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        @Html.TextAreaFor(model => model.TextoSessao4, new { @maxlength = "450", @class = "fundoInput  corTexto textoSessao form-control", rows = "10", placeholder = "Texto", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TextoSessao4, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row container-fluid text-center tamanhoTexto">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <br><br> </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 thumbnail text-center">
+                        <img class="img-responsive" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg7, new { Type = "file", @required = "required" })
+                        @Html.TextAreaFor(model => model.LegendaImg1, new { @maxlength = "10", @class = "textoSessao form-control", rows = "1", placeholder = "Legenda1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.LegendaImg1, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 thumbnail">
+                        <img class="img-responsive" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg8, new { Type = "file", @required = "required" })
+                        @Html.TextAreaFor(model => model.LegendaImg2, new { @maxlength = "10", @class = "textoSessao form-control", rows = "1", placeholder = "Legenda2", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.LegendaImg2, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 thumbnail">
+                        <img class="img-responsive" src="~/Images/img.png">
+                        @Html.TextBoxFor(model => model.ArquivoImg9, new { Type = "file", @required = "required" })
+                        @Html.TextAreaFor(model => model.LegendaImg3, new { @maxlength = "10", @class = "textoSessao form-control", rows = "1", placeholder = "Legenda3", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.LegendaImg3, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid text-right">
+        <div class="row jumbotron">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <span class="textoSessao ">GeraSite - Todos os direitos reservados</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- BOTÕES GERAR E CANCELAR -->
+    <center>
+        <button type="button" class="btn corBranca btnCancelar" formtarget="" onclick="location.href='@Url.Action("Index", "Usuario")'">
+            <h4>Cancelar</h4>
+        </button>
+        <button type="submit" class="btn corBranca btnGerar">
+            <h4>Gerar Modelo</h4>
+        </button>
+    </center>
+
+}

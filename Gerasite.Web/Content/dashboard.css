@@ -1,5 +1,5 @@
 ﻿#sidebar {
-    display: block;
+   display:block;
 }
 .img-item {
     margin-top: 40px;
@@ -36,7 +36,7 @@
     }
 /*Sidebar responsive*/
 #sidebar {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 @media only screen and (min-width: 1170px) {

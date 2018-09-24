@@ -18,7 +18,7 @@ namespace Gerasite.Infra.Data.Mappings
                 .HasMaxLength(50);
 
             Property(x => x.DescricaoTemplate)
-                .HasMaxLength(100);
+                .HasMaxLength(250);
 
             Property(x => x.CorTemplate)
                 .HasMaxLength(12);

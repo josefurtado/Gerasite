@@ -1,10 +1,9 @@
 ﻿using Gerasite.Application;
 using Gerasite.Application.Services.Interfaces;
-using Gerasite.Application.ViewModels.TemplateViewModels;
+using Gerasite.Application.Services.Interfaces.ITemplatesService;
 using Gerasite.Dominio.Entidades;
 using Gerasite.Infra.Data.Context;
 using Gerasite.Web.Utils;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using System.Web.Mvc;
@@ -22,13 +21,16 @@ namespace Gerasite.Web.Controllers
             }
             private set => _gerenciadorUsuario = value;
         }
+
         private readonly ITemplateService _template;
         private readonly ITemplateArquivadoService _templateArquivado;
+        private readonly GerasiteContext context = new GerasiteContext();
+
         public TemplateController(ITemplateService template, ITemplateArquivadoService templateArquivado) { 
             this._template = template;
             this._templateArquivado = templateArquivado;
         }
-        private GerasiteContext context = new GerasiteContext();
+        
         public ActionResult ListaTemplates()
         {
             return View(context.Templates);
@@ -44,8 +46,7 @@ namespace Gerasite.Web.Controllers
         public ActionResult CriarTemplate(Template template)
         {
             if (ModelState.IsValid)
-            {
-                context.Templates.Add(template);
+            {             
                 try
                 {
                     if (template.Foto != null)
@@ -56,7 +57,7 @@ namespace Gerasite.Web.Controllers
                             template.FOTO_ENDERECO = string.Format("~/Images/Fotos/{0}", pic);
                         }
                     }
-                    context.SaveChanges();
+                    _template.SaveOrUpdate(template);
                     return RedirectToAction("ListaTemplates", "Template");
                 }
                 catch
@@ -68,65 +69,49 @@ namespace Gerasite.Web.Controllers
             return View(template);
         }
 
-
-        public ActionResult EditarTemplate(int id, string idUser)
+        [Authorize]
+        public ActionResult EditarTemplate(int id)
         {
-            var usuario = GerenciadorUsuario.FindByIdAsync(idUser);
-            if (usuario == null)
+            Template template = _template.Get(id);
+            if (template == null)
             {
                 return HttpNotFound();
             }
-            var temp = new TemplateArquivado();
-            temp.Id = id;
-            temp.IdUsuario = usuario.ToString();
-            TemplateArquivado Arquivo = new TemplateArquivado { IdUsuario = usuario.ToString(), IdTemplate = temp.Id };
-            return View(Arquivo);
-        }
-
-        [HttpPost]
-        public ActionResult EditarTemplate(TemplateArquivado template)
-        {
-            if (ModelState.IsValid)
+            switch (template.Id)
             {
-                int temp = template.Id;
-                var ID = User.Identity.GetUserId();
-                TemplateArquivado Arquivo = new TemplateArquivado { IdUsuario = ID, IdTemplate = temp };
-              
-                switch (temp)
-                {
-                    case 1:
-                        context.TemplatesArquivados.Add(Arquivo);
-                        context.SaveChanges();
-                        return RedirectToAction("Portfolio", "Template");
-                    default:
-                        context.TemplatesArquivados.Add(Arquivo);
-                        context.SaveChanges();
-                        return RedirectToAction("Index", "Usuario");
-                }
-                
+                case 1:
+                    return RedirectToAction("Portfolio", "Portfolio");
+                case 2:
+                    return RedirectToAction("Comercial", "Comercial");
+                case 3:
+                    return RedirectToAction("Mostruario", "Mostruario");
+                default:
+                    return RedirectToAction("Index", "Usuario");
             }
-            return View(template);
         }
         
-        public ActionResult Portfolio()
+        [Authorize]
+        public ActionResult VerDetalhe(int id)
         {
-            return View();
+            TemplateArquivado template = _templateArquivado.Get(id);
+            if (template == null)
+            {
+                return HttpNotFound();
+            }
+            switch (template.IdTipoTemplate)
+            {
+                case 1:
+                    return RedirectToAction("PortfolioDetalhe"  +'/'+ template.IdTemplate, "Portfolio"  );
+                case 2:
+                    return RedirectToAction("ComercialDetalhe" + '/' + template.IdTemplate, "Comercial");
+                case 3:
+                    return RedirectToAction("MostruarioDetalhe" + '/' + template.IdTemplate, "Mostruario");
+                default:
+                    return RedirectToAction("Index", "Usuario");
+            }
         }
+      
 
-        [HttpPost]
-        public ActionResult Portfolio(PortfolioViewModel model)
-        {
-            Session["Titulo"] = model.Titulo;
-            Session["Profissao"] = model.Profissao;
-            return View("PortfolioDetalhe");
-
-        }
-
-       public ActionResult PortfolioDetalhe()
-        {
-            
-            return View();
-        }
 
     }
 }

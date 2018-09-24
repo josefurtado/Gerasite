@@ -1,25 +1,25 @@
-﻿using Gerasite.Application.ViewModels;
-using Gerasite.Application.Services.Interfaces;
-using System.Web.Mvc;
-using Gerasite.Infra.Data.Context;
+﻿using Gerasite.Infra.Data.Context;
+using Microsoft.AspNet.Identity;
 using System.Linq;
-using Gerasite.Dominio.Entidades;
+using System.Web.Mvc;
 
 namespace Gerasite.Web.Controllers
 {
     [Authorize]
     public class UsuarioController : Controller
-    {
-        private readonly IUsuarioService _service;
-
-        public UsuarioController(IUsuarioService service)
+    {     
+        public UsuarioController()
         {
-            this._service = service;
         }
+
+        private readonly GerasiteContext context = new GerasiteContext();
+
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            var user = User.Identity.GetUserId();
+            
+            return View(context.TemplatesArquivados.Where(u => u.IdUsuario.Equals(user)));
         }
 
 
