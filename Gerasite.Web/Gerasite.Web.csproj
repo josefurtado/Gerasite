@@ -53,7 +53,38 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -114,21 +145,45 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dashboard.css" />
     <Content Include="Content\EditarUsuario.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\home.css" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\Register.css" />
     <Content Include="Content\RegistrarUsuario.css" />
     <Content Include="Content\index.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Templates\Comercial\bootstrap.min.css" />
+    <Content Include="Content\Templates\Comercial\layoutCafeteria.css" />
+    <Content Include="Content\Templates\Comercial\layoutCafeteriaPreto.css" />
+    <Content Include="Content\Templates\Comercial\layoutGeraSite.css" />
+    <Content Include="Content\Templates\Mostruario\bootstrap.min.css" />
+    <Content Include="Content\Templates\Mostruario\layoutGeraSite.css" />
+    <Content Include="Content\Templates\Mostruario\mostruario.css" />
+    <Content Include="Content\Templates\Mostruario\mostruarioLaranja.css" />
+    <Content Include="Content\Templates\Portfolio\bootstrap.min.css" />
+    <Content Include="Content\Templates\Portfolio\layoutGeraSite.css" />
+    <Content Include="Content\Templates\Portfolio\layoutPortifolioAzul.css" />
+    <Content Include="Content\Templates\Portfolio\layoutPortifolioCinza.css" />
+    <Content Include="Content\Templates\Portfolio\layoutPortifolioRosa.css" />
+    <Content Include="Content\Templates\Portfolio\layoutPortifólio.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\city-blurred-hd.jpg" />
     <Content Include="Images\dark-room-.jpg" />
     <Content Include="Images\Hd-Laptop-wallpapers.jpg" />
+    <Content Include="Images\IMG-6107-01.jpeg" />
+    <Content Include="Images\img.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\night.jpg" />
     <Content Include="Images\Usuario-padrao.jpg" />
     <Content Include="Images\Work-Desk-HD-wallpaper.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dashboard.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -139,19 +194,27 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\mudaCorPortifolio.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\TemplatesControllers\ComercialController.cs" />
+    <Compile Include="Controllers\TemplatesControllers\MostruarioController.cs" />
+    <Compile Include="Controllers\TemplatesControllers\PortfolioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -163,12 +226,30 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Shared\_BasicLayout.cshtml" />
-    <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Usuario\EditarUsuario.cshtml" />
-    <Content Include="Views\Usuario\_PartialMenuLateral.cshtml" />
+    <Content Include="Views\Shared\_PartialMenuLateral.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Manager\EditUser.cshtml" />
+    <Content Include="Views\Manager\EditPassword.cshtml" />
+    <Content Include="Views\Template\CriarTemplate.cshtml" />
+    <Content Include="Views\Template\ListaTemplates.cshtml" />
+    <Content Include="Views\Portfolio\Portfolio.cshtml" />
+    <Content Include="Views\Portfolio\PortfolioDetalhe.cshtml" />
+    <Content Include="Views\Shared\_TemplateArquivado.cshtml" />
+    <Content Include="Views\Template\VerDetalhe.cshtml" />
+    <Content Include="Views\Shared\_NavGerasite.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Shared\_Default.cshtml" />
+    <Content Include="Views\Comercial\Comercial.cshtml" />
+    <Content Include="Views\Comercial\ComercialDetalhe.cshtml" />
+    <Content Include="Views\Mostruario\Mostruario.cshtml" />
+    <Content Include="Views\Mostruario\MostruarioDetalhe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,8 +259,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Fotos\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gerasite.Application\Gerasite.Application.csproj">

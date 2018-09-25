@@ -1,0 +1,26 @@
+﻿@model  Gerasite.Dominio.Entidades.Template
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditarTemplate</title>
+</head>
+<body>
+    <div>
+        <h3>Estamos gerando seu template, se não for gerado automaticamente clique no botão abaixo</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-group">
+            <input type="submit" value="Prosseguir" class="btn btn-success" />
+        </div>
+
+    }
+</body>
+</html>

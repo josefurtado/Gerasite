@@ -1,0 +1,112 @@
+﻿@model Gerasite.Dominio.Entidades.Templates.Portfolio
+
+@{
+    Layout = "~/Views/Shared/_NavGerasite.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Meu Template</title>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Templates/Portfolio/layoutGeraSite.css" />
+    <link rel="stylesheet" href="~/Content/Templates/Portfolio/layoutPortifólio.css">
+    <link rel="stylesheet" href="~/Content/Templates/Portfolio/layoutPortifolioRosa.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-default corNav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">SOBRE</a></li>
+                    <li><a href="#">ATUAÇÕES</a></li>
+                    <li><a href="#">CITAÇÃO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SESSAO PRINCIPAL -->
+    <div id="principal" class="jumbotron text-center sectionPrincipal texto cor">
+        <h1 class="texto">@Html.DisplayFor(model => model.Titulo),</h1>
+        <h2 class="texto">@Html.DisplayFor(model => model.Profissao)</h2>
+    </div>
+
+    <!-- SESSAO SOBRE -->
+    <section id="sobre" class=" texto jumbotron fundoSobre">
+        <div class="row  container-fluid ">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 ">
+                <center>
+                    <h2><strong>Um pouco sobre mim...</strong></h2>
+                </center><br>
+                <h4 class="texto">
+                    @Html.DisplayFor(model => model.Texto1)
+                </h4>
+            </div>
+            <div class="col-sm-4">
+                @if (!string.IsNullOrEmpty(Model.CaminhoImg1))
+                {
+                    <img class="img-responsive" id="img-template" src="@Url.Content(Model.CaminhoImg1)" alt="Image" />
+                }
+            </div>
+        </div>
+    </section>
+
+    <!--SESSAO ATUAÇÕES -->
+    <section class=" jumbotron texto">
+        <div class="row container-fluid">
+            <div class="col-sm-1 col-lg-1"></div>
+            <div class="col-sm-4 col-lg-4">
+                @if (!string.IsNullOrEmpty(Model.CaminhoImg2))
+                {
+                    <img class="img-responsive" id="img-template" src="@Url.Content(Model.CaminhoImg2)" alt="Image" />
+                }
+
+            </div>
+            <div class="col-sm-6 col-lg-6">
+                <center>
+                    <h2><strong>Minhas atuações...</strong></h2>
+                </center><br>
+                <h4 class="texto">
+                    @Html.DisplayFor(model => model.Texto2)
+                </h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- SESSAO CITACAO -->
+    <section class="jumbotron text-center fundoCitacao">
+        <div class="container-fluid ">
+            <h3><i> @Html.DisplayFor(model => model.Citacao)</i></h3>
+        </div>
+    </section>
+
+    <!-- FOOTER CONTATOS -->
+    <footer class="cor corFooter">
+        <div class="footer">
+            <p>Contatos</p>
+            Telefone:  @Html.DisplayFor(model => model.Telefone)<br>
+            E-mail:  @Html.DisplayFor(model => model.Email)
+        </div>
+        <br>
+        <center> <strong><p>GeraSite - Todos os direitos reservados</p></strong></center>
+    </footer>
+</body>
+</html>

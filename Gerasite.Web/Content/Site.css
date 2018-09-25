@@ -52,8 +52,9 @@ body, html {
 
 .parallax4 {
     background: url(../Images/Hd-Laptop-wallpapers.jpg);
-    min-height: 100%;
+    height: 50%;
 }
+
 
 .parallax1, .parallax2, .parallax3, .parallax4 {
     position: relative;

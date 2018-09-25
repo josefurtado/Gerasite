@@ -28,7 +28,7 @@ namespace Gerasite.Application.Services
         {
             return _Uow.GetRepository<TemplateArquivado>().GetById(id);
         }
-
+          
         public void SaveOrUpdate(TemplateArquivado entity)
         {
             if (entity.Id == 0)

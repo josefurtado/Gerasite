@@ -1,0 +1,32 @@
+.corNav{
+    background-color: black;   
+}
+.navbar-nav a {
+    color: #FFFFFF !important;
+}
+.navbar-nav li a:hover {
+    color: #000000 !important;
+    background-color: #d7dae0 !important;
+}
+.fonteTituloSessao{
+    color:white;
+    background-color:black;
+}
+.fonteTextoSessao{
+    color:black; 
+    background-color:white;
+}
+.footer{
+    background-color: black; 
+    color:white; 
+}
+.corBanner{
+    color: white;
+}
+#textoCitacao{
+    border-color: rgb(87, 83, 83);
+}
+.active {
+    background-color: rgb(54, 51, 51);
+    color: black;
+}

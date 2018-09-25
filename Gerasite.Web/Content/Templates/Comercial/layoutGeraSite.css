@@ -1,0 +1,12 @@
+.corBranca{
+    color: white;
+}
+.btnCancelar{
+    background-color:grey;
+}
+.btnGerar{
+    background-color:rgb(65, 61, 61);
+}
+.btnEscolhaCor{
+    border-radius: 50%;
+}

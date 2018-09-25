@@ -13,7 +13,7 @@ namespace Gerasite.Infra.Data.Mappings
             Property(x => x.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.DataCriacao)
+           /* Property(x => x.DataCriacao)
                 .IsRequired();
 
             Property(x => x.NomeTemplate)
@@ -21,7 +21,7 @@ namespace Gerasite.Infra.Data.Mappings
 
             HasRequired(x => x.Template);
 
-            HasRequired(x => x.Usuario);
+            HasRequired(x => x.Usuario);*/
 
         }
     }

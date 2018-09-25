@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNet.Identity;
+<link href="~/Content/menu.css" rel="stylesheet" type="text/css" />
+
+<nav class="navbar navbar-fixed-top navbar-inverse corNav hidden-lg hidden-sm hidden-md" id="#menuLayout">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="icon-bar corIconBar"></span>
+                <span class="icon-bar corIconBar"></span>
+                <span class="icon-bar corIconBar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                <img style="width:130px" src="~/Images/Logo.png" alt="Logo" />
+            </a>
+        </div>
+
+        <div id="menu" class="collapse navbar-collapse text-center">
+            <ul class="nav navbar-nav corNav ">
+                <li ><h4>@Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "null", "null", routeValues: null, htmlAttributes: new { title = "null" })</h4></li>
+                <li class="selection"><a class="item-sidebar" href="@Url.Action("Index", "Usuario")"> Painel</a></li>
+                <li class="selection"><a class="item-sidebar" href="@Url.Action("EditUser", "Manager", new { id = User.Identity.GetUserId() })"> Editar</a></li>
+                <li class="selection"><a href="#" class="item-sidebar">Ver Templates</a></li>
+                <li class="selection"><a class="item-sidebar" href="@Url.Action("Logout", "Account")"> Sair</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 preenchimento navFixa hidden-xs">
+        <ul class="nav navbar-inverse nav-sidebar corNav">
+            <li><br /><br /><br /><br /></li>
+            <li class="text-center"><h4>@Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "null", "null", routeValues: null, htmlAttributes: new { title = "null" })</h4></li>
+            <hr />
+            <li class="selection"><a class="item-sidebar" href="@Url.Action("Index", "Usuario")"> Painel</a></li>
+            <li class="selection"><a class="item-sidebar" href="@Url.Action("EditUser", "Manager", new { id = User.Identity.GetUserId() })"> Editar</a></li>
+            <li class="selection"><a href="@Url.Action("ListaTemplates", "Template")" class="item-sidebar">Ver Templates</a></li>
+            <li class="selection"><a class="item-sidebar" href="@Url.Action("Logout", "Account")"> Sair</a></li>
+        </ul>
+    </div>
+</div>

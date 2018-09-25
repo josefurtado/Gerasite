@@ -1,0 +1,255 @@
+﻿@model Gerasite.Dominio.Entidades.Templates.Comercial
+
+@{
+    Layout = "~/Views/Shared/_NavGerasite.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<link href="~/Content/Templates/Comercial/bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/Templates/Comercial/layoutCafeteria.css">
+<link rel="stylesheet" href="~/Content/Templates/Comercial/layoutCafeteriaPreto.css">
+<link rel="stylesheet" href="~/Content/Templates/Comercial/layoutGeraSite.css">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12"><br /><br /><br /></div>
+    </div>
+</div>
+@using (Html.BeginForm("Comercial", "Comercial", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+  
+        <nav class="navbar  corNav" id="#menuLayout">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                        <span class="icon-bar corIconBar"></span>
+                        <span class="icon-bar corIconBar"></span>
+                        <span class="icon-bar corIconBar"></span>
+                    </button>
+
+                </div>
+
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav menuUl">
+                        <li class="menuLi"><a href="#sHome"><strong>HOME</strong></a></li>
+                        <li class="menuLi"><a href="#sSobre"><strong>SOBRE</strong></a></li>
+                        <li class="menuLi"><a href="#sMenu"><strong>CARDÁPIO</strong></a></li>
+                        <li id="menuServico" class="menuLi"><a href="#novaSessao1"><strong>SERVIÇOS</strong></a></li>
+                        <li class="menuLi"><a href="#sContatos"><strong>CONTATOS</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- SESSAO PRINCIPAL -->
+        <header id="sHome" class="container header">
+            <img class="imgContainer" src="~/Images/img.png">
+            @Html.TextAreaFor(model => model.Titulo, new { @maxlength = "50", @class = "fundoInput center corBanner form-control", rows = "1", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+
+            @Html.TextBoxFor(model => model.ArquivoImg1, new { Type = "file" })
+        </header>
+
+
+        <!-- SESSAO SOBRE -->
+        <section id="sSobre" class="container-fluid">
+            <br><br><br>
+            <div class="row">
+                <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+                <div class="col-sm-4 col-xs-8 col-lg-4 col-3 text-center fonteTituloSessao corFonteTituloSessao h1">SOBRE NÓS</div>
+                <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+            </div>
+            <br>
+
+            <div class="row ">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div id="textoSobre" class="col-sm-8 col-lg-6  jumbotron corIconBar">
+                    @Html.TextAreaFor(model => model.TextoSobre, new { @maxlength = "250", @class = "fundoInput fonteTextoSessao corFonteTextoSessao h4 form-control", rows = "10", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.TextoSobre, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div id="textoCitacao" class="col-sm-8 col-lg-6 jumbotron">
+                    @Html.TextAreaFor(model => model.TextoCitacao, new { @maxlength = "50", @class = "fundoInput fonteTextoSessao corFonteTextoSessao h4 form-control", rows = "4", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.TextoCitacao, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+        </section>
+
+        <!-- IMAGEM SESSAO SOBRE -->
+        <section class="container-fluid">
+            <br>
+            <div class="row ">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6"><img class="img-responsive" src="~/Images/img.png">@Html.TextBoxFor(model => model.ArquivoImg2, new { Type = "file", @required = "required" })</div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+        </section>
+        <br>
+
+        <!-- FUNCIONAMENTO -->
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6">
+                    @Html.TextAreaFor(model => model.TextoFuncionamento, new { @maxlength = "50", @class = "h4 form-control fundoInput", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.TextoFuncionamento, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-sm-2 col-lg-3"></div>
+             </div>
+        </section>
+
+
+        <!-- SESSAO CARDAPIO -->
+        <section id="sMenu" class="container-fluid">
+            <br><br><br>
+            <div class="row">
+                <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+                <div class="col-sm-4 col-xs-8 col-lg-4 col-3 text-center fonteTituloSessao corFonteTituloSessao h1">CARDÁPIO</div>
+                <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+            </div>
+
+            <div id="textoMenu" class="jumbotron fundoBranco">
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6 ">
+                        @Html.TextAreaFor(model => model.TituloPrato1, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TituloPrato1, "", new { @class = "text-danger" })
+
+                        @Html.TextAreaFor(model => model.TextoPrato1, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TextoPrato1, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6">
+                        @Html.TextAreaFor(model => model.TituloPrato2, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TituloPrato2, "", new { @class = "text-danger" })
+
+                        @Html.TextAreaFor(model => model.TextoPrato2, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TextoPrato2, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6">
+                        @Html.TextAreaFor(model => model.TituloPrato3, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TituloPrato3, "", new { @class = "text-danger" })
+
+                        @Html.TextAreaFor(model => model.TextoPrato3, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TextoPrato3, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6">
+                        @Html.TextAreaFor(model => model.TituloPrato4, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TituloPrato4, "", new { @class = "text-danger" })
+
+                        @Html.TextAreaFor(model => model.TextoPrato4, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.TextoPrato4, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SESSAO IMAGEM CARDÁPIO -->
+        <section class="container-fluid">
+            <div class="row ">
+                <div class="col-sm-2 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-6"><img class="img-responsive" src="~/Images/img.png">@Html.TextBoxFor(model => model.ArquivoImg3, new { Type = "file", @required = "required" })</div>
+                <div class="col-sm-2 col-lg-3"></div>
+            </div>
+            
+        </section>
+
+        <!-- SESSAO CONTATOS -->
+        <section id="sContatos" class="container-fluid">
+            <br><br><br>
+            <div class="row">
+                <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+                <div class="col-sm-4 col-xs-8 col-lg-4 col-3 text-center fonteTituloSessao corFonteTituloSessao h1">CONTATOS</div>
+                <div class="col-sm-4 col-xs-2 col-lg-4 col-1"></div>
+            </div>
+
+            <div id="textoOnde" class="jumbotron fundoBranco">
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6 ">
+                        <span class="fonteTextoSessao corFonteTextoSessao h4 strong inputEspaco">Telefone:</span><br>
+                        @Html.TextAreaFor(model => model.Telefone, new { @maxlength = "10", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6">
+                        <span class="fonteTextoSessao corFonteTextoSessao h4 strong inputEspaco">E-mail:</span><br>
+                        @Html.TextAreaFor(model => model.Email, new { @maxlength = "50", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-3"></div>
+                    <div class="col-sm-8 col-lg-6">
+                        <span class="fonteTextoSessao corFonteTextoSessao h4 strong inputEspaco">Endereço:</span><br>
+                        @Html.TextAreaFor(model => model.Endereco, new { @maxlength = "50", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2 col-lg-3"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER LAYOUT -->
+        <footer class="container-fluid footer footerLayout h4">
+            <br>
+            <center> GeraSite - Todos os direitos reservados</center>
+            <br>
+        </footer>
+        <br>
+
+        <!-- BOTÕES GERAR E CANCELAR -->
+        <center>
+            <button type="button" class="btn corBranca btnCancelar" formtarget="" onclick="location.href='@Url.Action("Index", "Usuario")'">
+                <h4>Cancelar</h4>
+            </button>
+            <button type="submit" class="btn corBranca btnGerar">
+                <h4>Gerar Modelo</h4>
+            </button>
+        </center>
+
+  
+    <br>
+
+    <!-- FOOTER GERASITE -->
+    <footer class="navbar-inverse corBranca">
+        <br>
+        <center>
+            <h4>GeraSite - Todos os direitos reservados</h4>
+        </center>
+        <br>
+    </footer>
+
+}

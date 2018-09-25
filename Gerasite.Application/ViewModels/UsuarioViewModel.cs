@@ -20,5 +20,6 @@ namespace Gerasite.Application.ViewModels
         [Required(ErrorMessage = "O campo E-mail é requerido")]
         [Display(Name = "Senha")]
         public string Senha { get; set; }
+        public string ConfirmaSenha { get; set; }
     }
 }

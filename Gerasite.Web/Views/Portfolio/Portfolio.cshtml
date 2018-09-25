@@ -1,0 +1,126 @@
+﻿@model Gerasite.Dominio.Entidades.Templates.Portfolio
+
+@{
+    Layout = "~/Views/Shared/_NavGerasite.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<link href="~/Content/Templates/Portfolio/bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/Templates/Portfolio/layoutGeraSite.css">
+<link rel="stylesheet" href="~/Content/Templates/Portfolio/layoutPortifólio.css">
+<link rel="stylesheet" href="~/Content/Templates/Portfolio/layoutPortifolioRosa.css" id="cssPagina">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12"><br /><br /><br /></div>
+    </div>
+</div>
+@using (Html.BeginForm("Portfolio", "Portfolio", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <!--MENU LAYOUT -->
+    <nav class="navbar navbar-default corNav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbarLayout">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbarLayout">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">SOBRE</a></li>
+                    <li id="menuHabilidades"><a href="#">HABILIDADES</a></li>
+                    <li><a href="#">ATUAÇÕES</a></li>
+                    <li><a href="#">CITAÇÃO</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <!--SESSAO PRINCIPAL -->
+    <div id="principal" class="jumbotron text-center sectionPrincipal texto cor">
+        @Html.TextAreaFor(model => model.Titulo, new { @maxlength = "50", @class = "inputTitulo fundoInput form-control inputs h1 cont1", rows = "1", @required = "required" })
+        @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+        <br />
+        @Html.TextAreaFor(model => model.Profissao, new { @maxlength = "50", @class = "inputProfissao fundoInput form-control inputs h2", rows = "1", @required = "required" })
+        @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
+    </div>
+
+    <!--SESSAO SOBRE -->
+    <section id="sobre" class="container-fluid texto ">
+        <div class="row jumbotron fundoSobre">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 ">
+                <center><h2><strong>Um pouco sobre mim...</strong></h2></center><br>
+                @Html.TextAreaFor(model => model.Texto1, new { @maxlength = "250", @class = "inputSobreTexto fundoInput form-control h4", rows = "7", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Texto1, "", new { @class = "text-danger" })
+            </div>
+            
+            <div class="col-sm-4">
+                <img class="img-responsive" src="~/Images/img.png">
+                @Html.TextBoxFor(model => model.ArquivoImg1, new { Type = "file", id = "inputFile" })
+            </div>
+            </div>
+        
+</section> 
+
+    <!-- SESSAO ATUAÇOES -->
+    <section id="atuacoes" class="container-fluid texto">
+        <div class="row jumbotron">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+                <img class="img-responsive" src="~/Images/img.png">
+                @Html.TextBoxFor(model => model.ArquivoImg2, new { Type = "file" })
+            </div>
+            <div class="col-sm-6 ">
+                <center><h2><strong>Minhas atuações...</strong></h2></center><br>
+                @Html.TextAreaFor(model => model.Texto2, new { @maxlength = "250", @class = "inputSobreTexto fundoInput form-control h4", rows = "7", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Texto2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </section>
+
+    <!--SESSAO CITACAO -->
+    <section class="jumbotron text-center fundoCitacao">
+        <div class="container ">
+            @Html.TextAreaFor(model => model.Citacao, new { @maxlength = "50", @class = "inputSobreTexto fundoInput form-control h3 inputs", rows = "3", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Citacao, "", new { @class = "text-danger" })
+        </div>
+    </section>
+
+    <!--SESSAO CONTATOS -->
+    <footer class="cor corFooter">
+        <div class="footer">
+            <p>Contatos</p>
+            @Html.TextAreaFor(model => model.Telefone, new { @maxlength = "11", @class = "inputContatos fundoInput", rows = "1", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+            <br />
+            @Html.TextAreaFor(model => model.Email, new { @maxlength = "50", @class = "inputContatos fundoInput", rows = "1", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+            <center> <p>GeraSite - Todos os direitos reservados</p></center>
+        </div>
+    </footer>
+    <br />
+
+    <!-- BOTÕES GERAR E CANCELAR -->
+    <center>
+        <button type="button" class="btn corBranca btnCancelar" formtarget="" onclick="location.href='@Url.Action("Index", "Usuario")'">
+            <h4>Cancelar</h4>
+        </button>
+        <button type="submit" class="btn corBranca btnGerar">
+            <h4>Gerar Modelo</h4>
+        </button>
+    </center>
+</div>
+}
+

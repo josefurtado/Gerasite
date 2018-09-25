@@ -1,0 +1,32 @@
+﻿@model Gerasite.Application.ViewModels.AccountViewModels.RegisterViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayEmail</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Register.css" />
+</head>
+<body>
+        <div class="container" id="PainelCadastro">
+            <div class="row" id="Cadastro">
+                <div class="form-horizontal" id="formulario">
+                    <h2>Cadastrado Com Sucesso</h2>
+                    <p class="text-info">
+                        Bem vindo (a) ao Atlas Websites
+                    </p>
+                    <p class="text-warning">
+                        Clique <a href="@Url.Action("Login","Account")">aqui</a> para realizar o login e aproveitar os nossos serviços.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>

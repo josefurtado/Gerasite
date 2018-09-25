@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Gerasite.Dominio.Entidades.Template>
+@{
+    ViewBag.Title = "Lista de Templates";
+    Layout = "~/Views/Shared/_NavGerasite.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/index.css" />
+<link rel="stylesheet" href="~/Content/menu.css" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/dashboard.js"></script>
+<div class="container-fluid">
+    @{Html.RenderPartial("~/Views/Shared/_PartialMenuLateral.cshtml");}
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12"><br /><br /><br /></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Nossos Templates</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="Templates">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4 ">
+            <div class="zoom">
+                <div class="alert-danger alert" role="alert"><h4>@Html.DisplayFor(modelItem => item.NomeTemplate)</h4></div>
+                @if (!string.IsNullOrEmpty(item.FOTO_ENDERECO))
+                {
+                    <img class="img-responsive" id="img-template" src="@Url.Content(item.FOTO_ENDERECO)" alt="Image" />
+                }
+                <br />
+                <div class="text-left">
+                    <strong> @Html.DisplayFor(modelItem => item.DescricaoTemplate)</strong>
+                </div>
+                <div class="edit" hidden>
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("EditarTemplate", "Template", new { id = item.Id})'">Editar</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    }
+    
+</div>
+
+
