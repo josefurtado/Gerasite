@@ -67,6 +67,7 @@
             </div>
             
             <div class="col-sm-4">
+                <img class="img-responsive" src="~/Images/img.png">
                 @Html.TextBoxFor(model => model.ArquivoImg1, new { Type = "file", id = "inputFile" })
             </div>
             </div>
@@ -77,7 +78,10 @@
     <section id="atuacoes" class="container-fluid texto">
         <div class="row jumbotron">
             <div class="col-sm-1"></div>
-            <div class="col-sm-4">@Html.TextBoxFor(model => model.ArquivoImg2, new { Type = "file" })</div>
+            <div class="col-sm-4">
+                <img class="img-responsive" src="~/Images/img.png">
+                @Html.TextBoxFor(model => model.ArquivoImg2, new { Type = "file" })
+            </div>
             <div class="col-sm-6 ">
                 <center><h2><strong>Minhas atuações...</strong></h2></center><br>
                 @Html.TextAreaFor(model => model.Texto2, new { @maxlength = "250", @class = "inputSobreTexto fundoInput form-control h4", rows = "7", @required = "required" })

@@ -43,19 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\EntidadeBase.cs" />
-    <Compile Include="Entidades\Logo.cs" />
-    <Compile Include="Entidades\Menu.cs" />
-    <Compile Include="Entidades\Pagina.cs" />
-    <Compile Include="Entidades\Sessao.cs" />
     <Compile Include="Entidades\Template.cs" />
     <Compile Include="Entidades\TemplateArquivado.cs" />
     <Compile Include="Entidades\Templates\Comercial.cs" />
     <Compile Include="Entidades\Templates\Mostruario.cs" />
     <Compile Include="Entidades\Templates\Portfolio.cs" />
-    <Compile Include="Entidades\Texto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Repository\ILogoRepository.cs" />
-    <Compile Include="Repository\IMenuRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ITemplateArquivadoRepository.cs" />
     <Compile Include="Repository\ITemplateRepository.cs" />
