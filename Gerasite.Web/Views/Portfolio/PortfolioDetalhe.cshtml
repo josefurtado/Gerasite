@@ -1,9 +1,8 @@
 ﻿@model Gerasite.Dominio.Entidades.Templates.Portfolio
 
 @{
-    Layout = "~/Views/Shared/_NavGerasite.cshtml";
+    Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -33,10 +32,10 @@
 
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">SOBRE</a></li>
-                    <li><a href="#">ATUAÇÕES</a></li>
-                    <li><a href="#">CITAÇÃO</a></li>
+                    <li><a href="#principal">HOME</a></li>
+                    <li><a href="#sobre">SOBRE</a></li>
+                    <li><a href="#atuacoes">ATUAÇÕES</a></li>
+                    <li><a href="#citacao">CITAÇÃO</a></li>
                 </ul>
             </div>
         </div>
@@ -70,7 +69,7 @@
     </section>
 
     <!--SESSAO ATUAÇÕES -->
-    <section class=" jumbotron texto">
+    <section id="atuacoes" class=" jumbotron texto">
         <div class="row container-fluid">
             <div class="col-sm-1 col-lg-1"></div>
             <div class="col-sm-4 col-lg-4">
@@ -92,7 +91,7 @@
     </section>
 
     <!-- SESSAO CITACAO -->
-    <section class="jumbotron text-center fundoCitacao">
+    <section id="citacao" class="jumbotron text-center fundoCitacao">
         <div class="container-fluid ">
             <h3><i> @Html.DisplayFor(model => model.Citacao)</i></h3>
         </div>
@@ -106,7 +105,7 @@
             E-mail:  @Html.DisplayFor(model => model.Email)
         </div>
         <br>
-        <center> <strong><p>GeraSite - Todos os direitos reservados</p></strong></center>
+        <center> <p><strong> GeraSite - Todos os direitos reservados</strong></p> </center>
     </footer>
 </body>
 </html>

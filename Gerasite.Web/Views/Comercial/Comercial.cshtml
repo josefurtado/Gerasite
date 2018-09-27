@@ -37,7 +37,6 @@
                         <li class="menuLi"><a href="#sHome"><strong>HOME</strong></a></li>
                         <li class="menuLi"><a href="#sSobre"><strong>SOBRE</strong></a></li>
                         <li class="menuLi"><a href="#sMenu"><strong>CARDÁPIO</strong></a></li>
-                        <li id="menuServico" class="menuLi"><a href="#novaSessao1"><strong>SERVIÇOS</strong></a></li>
                         <li class="menuLi"><a href="#sContatos"><strong>CONTATOS</strong></a></li>
                     </ul>
                 </div>
@@ -47,7 +46,7 @@
         <!-- SESSAO PRINCIPAL -->
         <header id="sHome" class="container header">
             <img class="imgContainer" src="~/Images/img.png">
-            @Html.TextAreaFor(model => model.Titulo, new { @maxlength = "50", @class = "fundoInput center corBanner form-control", rows = "1", @required = "required" })
+            @Html.TextAreaFor(model => model.Titulo, new { @maxlength = "50", @class = "fundoInput center corBanner form-control", rows = "1", @required = "required", placeholder = "Titulo" })
             @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
 
             @Html.TextBoxFor(model => model.ArquivoImg1, new { Type = "file" })
@@ -67,7 +66,7 @@
             <div class="row ">
                 <div class="col-sm-2 col-lg-3"></div>
                 <div id="textoSobre" class="col-sm-8 col-lg-6  jumbotron corIconBar">
-                    @Html.TextAreaFor(model => model.TextoSobre, new { @maxlength = "250", @class = "fundoInput fonteTextoSessao corFonteTextoSessao h4 form-control", rows = "10", @required = "required" })
+                    @Html.TextAreaFor(model => model.TextoSobre, new { @maxlength = "250", @class = "fundoInput fonteTextoSessao corFonteTextoSessao h4 form-control", rows = "10", @required = "required", placeholder = "Fale sobre você aqui." })
                     @Html.ValidationMessageFor(model => model.TextoSobre, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-sm-2 col-lg-3"></div>
@@ -77,7 +76,7 @@
             <div class="row">
                 <div class="col-sm-2 col-lg-3"></div>
                 <div id="textoCitacao" class="col-sm-8 col-lg-6 jumbotron">
-                    @Html.TextAreaFor(model => model.TextoCitacao, new { @maxlength = "50", @class = "fundoInput fonteTextoSessao corFonteTextoSessao h4 form-control", rows = "4", @required = "required" })
+                    @Html.TextAreaFor(model => model.TextoCitacao, new { @maxlength = "50", @class = "fundoInput fonteTextoSessao corFonteTextoSessao h4 form-control", rows = "4", @required = "required", placeholder = "Coloque uma citação, ou frase aqui." })
                     @Html.ValidationMessageFor(model => model.TextoCitacao, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-sm-2 col-lg-3"></div>
@@ -100,7 +99,7 @@
             <div class="row">
                 <div class="col-sm-2 col-lg-3"></div>
                 <div class="col-sm-8 col-lg-6">
-                    @Html.TextAreaFor(model => model.TextoFuncionamento, new { @maxlength = "50", @class = "h4 form-control fundoInput", @required = "required" })
+                    @Html.TextAreaFor(model => model.TextoFuncionamento, new { @maxlength = "50", @class = "h4 form-control fundoInput", @required = "required", placeholder = "Diga seu horário de funcionamento aqui." })
                     @Html.ValidationMessageFor(model => model.TextoFuncionamento, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-sm-2 col-lg-3"></div>
@@ -121,10 +120,10 @@
                 <div class="row">
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6 ">
-                        @Html.TextAreaFor(model => model.TituloPrato1, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TituloPrato1, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "Nome do Prato." })
                         @Html.ValidationMessageFor(model => model.TituloPrato1, "", new { @class = "text-danger" })
 
-                        @Html.TextAreaFor(model => model.TextoPrato1, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TextoPrato1, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "O que ele tem? Quanto custa?" })
                         @Html.ValidationMessageFor(model => model.TextoPrato1, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
@@ -133,10 +132,10 @@
                 <div class="row">
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6">
-                        @Html.TextAreaFor(model => model.TituloPrato2, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TituloPrato2, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "Nome do Prato." })
                         @Html.ValidationMessageFor(model => model.TituloPrato2, "", new { @class = "text-danger" })
 
-                        @Html.TextAreaFor(model => model.TextoPrato2, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TextoPrato2, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "O que ele tem? Quanto custa?" })
                         @Html.ValidationMessageFor(model => model.TextoPrato2, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
@@ -145,10 +144,10 @@
                 <div class="row">
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6">
-                        @Html.TextAreaFor(model => model.TituloPrato3, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TituloPrato3, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "Nome do Prato." })
                         @Html.ValidationMessageFor(model => model.TituloPrato3, "", new { @class = "text-danger" })
 
-                        @Html.TextAreaFor(model => model.TextoPrato3, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TextoPrato3, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "O que ele tem? Quanto custa?" })
                         @Html.ValidationMessageFor(model => model.TextoPrato3, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
@@ -157,10 +156,10 @@
                 <div class="row">
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6">
-                        @Html.TextAreaFor(model => model.TituloPrato4, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TituloPrato4, new { @maxlength = "20", @class = "h4 form-control strong fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "Nome do Prato." })
                         @Html.ValidationMessageFor(model => model.TituloPrato4, "", new { @class = "text-danger" })
 
-                        @Html.TextAreaFor(model => model.TextoPrato4, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.TextoPrato4, new { @maxlength = "50", @class = "h4 form-control fundoInput corFonteTextoSessao fonteTextoSessao inputEspaco", rows = "1", @required = "required", placeholder = "O que ele tem? Quanto custa?" })
                         @Html.ValidationMessageFor(model => model.TextoPrato4, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
@@ -193,7 +192,7 @@
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6 ">
                         <span class="fonteTextoSessao corFonteTextoSessao h4 strong inputEspaco">Telefone:</span><br>
-                        @Html.TextAreaFor(model => model.Telefone, new { @maxlength = "10", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.Telefone, new { @maxlength = "10", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required", placeholder = "3245-6789" })
                         @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
@@ -203,7 +202,7 @@
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6">
                         <span class="fonteTextoSessao corFonteTextoSessao h4 strong inputEspaco">E-mail:</span><br>
-                        @Html.TextAreaFor(model => model.Email, new { @maxlength = "50", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.Email, new { @maxlength = "50", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required", placeholder = "seu.email@exemplo.com" })
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
@@ -213,7 +212,7 @@
                     <div class="col-sm-2 col-lg-3"></div>
                     <div class="col-sm-8 col-lg-6">
                         <span class="fonteTextoSessao corFonteTextoSessao h4 strong inputEspaco">Endereço:</span><br>
-                        @Html.TextAreaFor(model => model.Endereco, new { @maxlength = "50", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required" })
+                        @Html.TextAreaFor(model => model.Endereco, new { @maxlength = "50", @class = "form-control fonteTextoSessao corFonteTextoSessao h4 inputEspaco", rows = "1", @required = "required", placeholder = "Coloque aqui seu endereço." })
                         @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-sm-2 col-lg-3"></div>
