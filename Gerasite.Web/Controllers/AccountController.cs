@@ -96,13 +96,14 @@ namespace Gerasite.Web.Controllers
             if (ModelState.IsValid)
             {
                 var findEmail = GerenciadorUsuario.FindByEmail(model.Email);
-                var user = GerenciadorUsuario.Find(findEmail.UserName, model.Senha);
-                if (user == null)
+                
+                if (findEmail == null)
                 {
                     ModelState.AddModelError("", "Email	ou senha inválido(s).");
                 }
                 else
                 {
+                    var user = GerenciadorUsuario.Find(findEmail.UserName, model.Senha);
                     ClaimsIdentity ident = GerenciadorUsuario.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                     AuthManager.SignOut();
                     AuthManager.SignIn(new AuthenticationProperties{IsPersistent = false }, ident);
